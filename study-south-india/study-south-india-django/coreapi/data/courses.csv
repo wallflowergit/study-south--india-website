@@ -1,0 +1,169 @@
+stream,level,name,description
+ARTS AND SCIENCE,UG,BCA (Bachelor of Computer Application),"A 3-year undergraduate degree focusing on computer fundamentals, programming languages, and software development."
+ARTS AND SCIENCE,UG,BCA Artificial Intelligence,A specialized BCA program focusing on the principles and applications of creating intelligent machines.
+ARTS AND SCIENCE,UG,BCA Artificial Intelligence & Machine Learning,A program combining AI concepts with machine learning algorithms for creating predictive models and systems.
+ARTS AND SCIENCE,UG,BCA Data Science,"Focuses on statistical analysis, data visualization, and techniques to extract insights from large datasets."
+ARTS AND SCIENCE,UG,BCA Ethical Hacking & Cyber Security,Trains students to identify and fix security vulnerabilities in computer systems and networks.
+ARTS AND SCIENCE,UG,BCA Cloud Computing,"A specialization in internet-based computing services, including storage, servers, databases, and software."
+ARTS AND SCIENCE,UG,BCA Data Analytics,"Focuses on the process of inspecting, cleansing, transforming, and modeling data to discover useful information."
+ARTS AND SCIENCE,UG,BCA Robotics,"A program that integrates computer science with engineering to design, build, and operate robots."
+ARTS AND SCIENCE,UG,BCA Game Development,"Specializes in the design, programming, and production of video games for various platforms."
+ARTS AND SCIENCE,UG,BCA Web Designing,"Focuses on creating and maintaining websites, covering aspects of graphic design, UI/UX, and scripting."
+ARTS AND SCIENCE,UG,BCA Database Management Systems (DBMS),"A specialization in creating, managing, and retrieving data from databases efficiently and securely."
+ARTS AND SCIENCE,UG,B.Com (Bachelor of Commerce),"A foundational 3-year degree in commerce, covering subjects like accounting, finance, and economics."
+ARTS AND SCIENCE,UG,B.Com Computer Application (CA),An integrated degree that combines commerce subjects with computer applications and information technology.
+ARTS AND SCIENCE,UG,B.Com ACCA,A B.Com degree integrated with the curriculum of the Association of Chartered Certified Accountants (ACCA).
+ARTS AND SCIENCE,UG,B.Com CMA,A B.Com degree aligned with the curriculum of the Certified Management Accountant (CMA) professional qualification.
+ARTS AND SCIENCE,UG,B.Com Aviation Logistics,"A commerce degree specializing in the management of logistics, cargo, and ground operations within the aviation industry."
+ARTS AND SCIENCE,UG,B.Com Finance,"A specialization in financial management, investments, banking, and capital markets."
+ARTS AND SCIENCE,UG,B.Com Taxation & Auditing,"Focuses on the principles of direct and indirect taxation, auditing procedures, and financial accounting."
+ARTS AND SCIENCE,UG,BHA (Bachelor of Hospital Administration),A degree focused on the administrative and management aspects of hospitals and healthcare facilities.
+ARTS AND SCIENCE,UG,BHM (Bachelor of Hotel Management),"A program covering all aspects of hotel operations, including front office, housekeeping, and food production."
+ARTS AND SCIENCE,UG,BSW (Bachelor of Social Work),"An undergraduate degree that prepares students for a career in social work, focusing on community development and welfare."
+ARTS AND SCIENCE,UG,BA English,"A Bachelor of Arts degree focusing on English literature, linguistics, and critical theory."
+ARTS AND SCIENCE,UG,BA Economics,"Studies the production, distribution, and consumption of goods and services, including micro and macroeconomics."
+ARTS AND SCIENCE,UG,BA Journalism,"Focuses on the skills of reporting, writing, editing, and presenting news for various media."
+ARTS AND SCIENCE,UG,BA Psychology,"The scientific study of the mind and behavior, exploring topics like cognitive processes and human development."
+ARTS AND SCIENCE,UG,BA Sociology,"The study of social behavior, society, patterns of social relationships, and culture."
+ARTS AND SCIENCE,UG,BA Literature,"A broad study of literary works from various cultures and historical periods, emphasizing analysis and interpretation."
+ARTS AND SCIENCE,UG,BA Mass Communication,"Covers a wide range of media industries, including journalism, advertising, public relations, and broadcasting."
+ARTS AND SCIENCE,UG,BA Criminology,"The study of crime, criminal behavior, and the legal system from a social sciences perspective."
+ARTS AND SCIENCE,UG,B.Sc. Animation,"A degree program focusing on 2D and 3D animation, visual effects, and digital art production."
+ARTS AND SCIENCE,UG,B.Sc. Aircraft Maintenance Engineering,"A science degree focused on the technical aspects of inspecting, servicing, repairing, and overhauling aircraft."
+ARTS AND SCIENCE,UG,B.Sc. Biotechnology,"The study of using living organisms and bioprocesses to create products for medicine, agriculture, and industry."
+ARTS AND SCIENCE,UG,B.Sc. Biomedical Science,A science-focused degree exploring the biological and chemical aspects of human health and disease.
+ARTS AND SCIENCE,UG,B.Sc. Biochemistry,"The study of chemical processes within and relating to living organisms, combining biology and chemistry."
+ARTS AND SCIENCE,UG,B.Sc. Botany,"The scientific study of plant life, covering their structure, genetics, ecology, and classification."
+ARTS AND SCIENCE,UG,B.Sc. Criminology,"A science-based approach to the study of crime, focusing on criminalistics and forensic investigation."
+ARTS AND SCIENCE,UG,B.Sc. Chemistry,"A fundamental science degree covering the study of matter, its properties, and how substances interact."
+ARTS AND SCIENCE,UG,B.Sc. Computer Science,"A 3-year science degree focusing on the theoretical foundations of computation, algorithms, and software systems."
+ARTS AND SCIENCE,UG,B.Sc. Catering & Hotel Management,"A science-oriented program focusing on food production, nutrition, and the operational aspects of hospitality."
+ARTS AND SCIENCE,UG,B.Sc. Electronics,"Focuses on the study of electronic circuits, devices, and systems used in communication and computing."
+ARTS AND SCIENCE,UG,B.Sc. Physics,"A fundamental science degree exploring matter, energy, and their interactions through space and time."
+ARTS AND SCIENCE,UG,B.Sc. Mathematics,"The study of topics such as quantity, structure, space, and change, forming the basis for many other fields."
+ARTS AND SCIENCE,UG,B.Sc. Microbiology,"The study of microscopic organisms, such as bacteria, viruses, fungi, and protozoa."
+ARTS AND SCIENCE,UG,B.Sc. Zoology,"The branch of biology that studies the animal kingdom, including their structure, behavior, and evolution."
+ARTS AND SCIENCE,UG,B.Sc. Visual Communication,"Focuses on conveying ideas and information through visual means, such as graphic design, photography, and illustration."
+ARTS AND SCIENCE,UG,B.Sc. Visual Arts,"A degree program covering various forms of visual art, including painting, sculpture, and drawing."
+ARTS AND SCIENCE,UG,B.Sc. Fashion Designing & Costume Designing,"A program focused on the art of designing apparel and accessories, from concept to production."
+ARTS AND SCIENCE,UG,B.Sc. Forensic Science,A science program focused on the application of scientific principles to criminal and civil investigations.
+ARTS AND SCIENCE,UG,B.Sc. Interior Designing,Focuses on the art and science of enhancing the interior of a building to achieve a healthier and more aesthetic environment.
+ARTS AND SCIENCE,UG,B.Sc. Photography,A degree program covering the technical and artistic aspects of creating photographic images.
+ARTS AND SCIENCE,UG,B.Sc. Food & Nutrition,"The study of food science and human nutrition, focusing on dietetics and health."
+ARTS AND SCIENCE,UG,B.Sc. Digital Forensic Science,A specialization in recovering and investigating material found in digital devices related to cybercrime.
+ARTS AND SCIENCE,UG,B.Sc. Cyber Security,"A science degree focusing on protecting computer systems, networks, and data from theft or damage."
+ARTS AND SCIENCE,UG,B.Sc. Psychology,"A science-oriented degree in the study of the mind and behavior, often with a focus on biological or cognitive aspects."
+ARTS AND SCIENCE,UG,BVA (Bachelor of Visual Arts),"A fine arts degree program centered on studio practice in areas like painting, sculpture, and printmaking."
+ARTS AND SCIENCE,UG,B.Sc Visual communication & Electronic Media,"Combines visual design principles with the technical skills required for television, film, and digital media."
+ARTS AND SCIENCE,UG,B.Sc. Computer Science With Data Analytics,A CS degree with a specialization in analyzing large datasets to extract meaningful insights.
+ARTS AND SCIENCE,UG,B.Sc Digital & Cyber Forensic Science,A comprehensive program covering both digital forensics and the broader field of cybersecurity.
+ENGINEERING,UG,B.Tech Agriculture,"An engineering degree focused on designing, constructing, and improving farming equipment and machinery."
+ENGINEERING,UG,B.Tech Aeronautical Engineering,"Focuses on the design, development, testing, and maintenance of aircraft within the Earth's atmosphere."
+ENGINEERING,UG,B.Tech Aeronautical & Astronautical Engineering,"Covers both aircraft (aeronautics) and spacecraft (astronautics), including satellites and rockets."
+ENGINEERING,UG,B.Tech Aerospace Engineering,A broad field covering the development of aircraft and spacecraft for atmospheric and space travel.
+ENGINEERING,UG,B.Tech Artificial Intelligence & Data Science,An engineering program covering the creation of intelligent systems and the analysis of large datasets.
+ENGINEERING,UG,B.Tech Artificial Intelligence & Machine Learning,An engineering discipline focused on building intelligent machines that can learn from data and make decisions.
+ENGINEERING,UG,B.Tech Automobile Engineering,"Focuses on the design, manufacturing, and operation of automobiles like cars, trucks, and buses."
+ENGINEERING,UG,B.Tech Bioinformatics,An interdisciplinary field that develops methods and software tools for understanding biological data.
+ENGINEERING,UG,B.Tech Biomedical Engineering,Applies engineering principles and design concepts to medicine and biology for healthcare purposes.
+ENGINEERING,UG,B.Tech Biotechnology,An engineering field that uses living systems and organisms to develop or make products.
+ENGINEERING,UG,B.Tech Chemical Engineering,Focuses on designing and operating industrial chemical plants for the large-scale production of chemicals.
+ENGINEERING,UG,B.Tech Civil Engineering,"A professional engineering discipline that deals with the design, construction, and maintenance of infrastructure."
+ENGINEERING,UG,B.Tech Computer Science & Engineering,"A core engineering program focusing on the design of computers, software, and computing systems."
+ENGINEERING,UG,B.Tech Cyber Security,An engineering discipline focused on protecting computer systems and networks from digital attacks.
+ENGINEERING,UG,B.Tech Electrical and Electronics Engineering,"Deals with the study and application of electricity, electronics, and electromagnetism."
+ENGINEERING,UG,B.Tech Electronics and Communication Engineering,"Focuses on the design of electronic circuits, communication equipment, and network systems."
+ENGINEERING,UG,B.Tech Fashion Technology,An engineering branch that applies technology and scientific principles to the design and production of textiles and apparel.
+ENGINEERING,UG,B.Tech Food Technology,"Deals with the production, preservation, quality control, and packaging of food products."
+ENGINEERING,UG,B.Tech Genetic Engineering,An engineering discipline focused on the direct manipulation of an organism's genes using biotechnology.
+ENGINEERING,UG,B.Tech Information Technology,"Focuses on the use of computers and telecommunications to store, retrieve, transmit, and manipulate data."
+ENGINEERING,UG,B.Tech Marine Engineering,"A branch of engineering that deals with the design, construction, and maintenance of ships and other sailing vessels."
+ENGINEERING,UG,B.Tech Material Engineering,Focuses on the study of the properties of materials and their application to various areas of engineering.
+ENGINEERING,UG,B.Tech Mechatronics Engineering,"An interdisciplinary branch of engineering that combines mechanics, electronics, and computer science."
+ENGINEERING,UG,B.Tech Petrochemical Engineering,A branch of chemical engineering that deals with operations in the refining of petroleum or crude oil.
+ENGINEERING,UG,B.Tech Petroleum Engineering,"Concerned with the production of hydrocarbons, which can be either crude oil or natural gas."
+ENGINEERING,UG,B.Tech Robotics & Automation,"An engineering field focused on designing, building, and operating robots and automated systems."
+MEDICAL,UG,MBBS (Bachelor of Medicine and Bachelor of Surgery),"The foundational undergraduate medical degree for aspiring doctors, covering all aspects of medicine and surgery."
+MEDICAL,UG,BDS (Bachelor of Dental Surgery),"The undergraduate professional degree for dentists, focusing on oral health and dental surgery."
+MEDICAL,UG,BAMS (Bachelor of Ayurveda Medicine & Surgery),"An undergraduate degree based on the ancient Indian system of traditional medicine, Ayurveda."
+MEDICAL,UG,BHMS (Bachelor of Homoeopathic Medicine & Surgery),An undergraduate degree based on the principles of homoeopathic medicine.
+MEDICAL,UG,BNYS (Bachelor of Naturopathy and Yogic Sciences),A degree focusing on natural healing methods and yogic sciences for health and wellness.
+MEDICAL,UG,BSMS (Bachelor of Siddha Medicine & Surgery),"An undergraduate degree in the Siddha system of traditional medicine, originating from Tamil Nadu."
+MEDICAL,UG,B.Pharm (Bachelor of Pharmacy),"An undergraduate academic degree in the field of pharmacy, preparing students to be pharmacists."
+MEDICAL,UG,Pharm.D (Doctor of Pharmacy),"A 6-year professional doctorate in pharmacy, with a greater emphasis on clinical practice."
+MEDICAL,UG,BASLP (Bachelor of Audiology and Speech-Language Pathology),A professional degree focused on the diagnosis and treatment of hearing and speech disorders.
+MEDICAL,UG,BOT (Bachelor of Occupational Therapy),A healthcare profession that helps people of all ages to overcome challenges in completing everyday tasks.
+MEDICAL,UG,BDT (Bachelor of Dental Technology),A program focused on the technical aspects of creating dental appliances like dentures and crowns.
+MEDICAL,UG,B.Sc. Nursing,A professional degree that prepares students for a career as a registered nurse in various healthcare settings.
+MEDICAL,UG,B.Sc. Optometry,"A healthcare profession concerned with eye care, vision, and the diagnosis and treatment of eye diseases."
+MEDICAL,UG,B.Sc. Agriculture,"A science degree focused on the practices of farming, crop production, and soil science."
+MEDICAL,UG,B.Sc. Cardiac Technology,A program that trains technicians to assist physicians in diagnosing and treating heart and blood vessel disorders.
+MEDICAL,UG,B.Sc. Perfusion Technology,Trains students to operate heart-lung machines during cardiac surgery and other procedures.
+MEDICAL,UG,B.Sc. Cardiac Pulmonary and Perfusion Technology (CPFT),"A comprehensive program covering heart, lung, and perfusion technologies for critical care."
+MEDICAL,UG,B.Sc. Respiratory Therapy,A specialized healthcare field focused on the treatment and care of patients with breathing disorders.
+MEDICAL,UG,B.Sc. Renal Dialysis Technology,A program that trains technicians to operate dialysis machines for patients with kidney failure.
+MEDICAL,UG,B.Sc. Physician Assistant,Trains healthcare professionals to provide medical care under the supervision of a physician.
+MEDICAL,UG,B.Sc. Operation Theatre & Anesthesia Technology (OT & AT),Prepares technicians to assist in surgery and administer anesthesia under medical supervision.
+MEDICAL,UG,B.Sc. Radiology,The study and application of medical imaging techniques to diagnose and treat diseases.
+MEDICAL,UG,B.Sc. Radio Therapy,"Focuses on the use of radiation to treat cancer and other diseases, training radiation therapists."
+MEDICAL,UG,B.Sc. Medical Laboratory Technology (MLT),"Trains technicians to perform complex diagnostic tests on blood, tissue, and other bodily fluids."
+MEDICAL,UG,B.Sc. Medical Imaging Technology,"A broad program covering various imaging techniques like X-ray, CT, MRI, and ultrasound."
+MEDICAL,UG,B.Sc. Critical Care Technology,Focuses on training technicians to care for critically ill patients in intensive care units (ICUs).
+MEDICAL,UG,B.Sc. Neuro Science Technology,Trains technologists to assist in the diagnosis of nervous system disorders using techniques like EEG and EMG.
+MEDICAL,UG,B.Sc. Trauma Care Management,"A specialized program focusing on the emergency management of patients with acute, life-threatening injuries."
+MEDICAL,UG,B.Sc. Medical Records Science & Technology,Focuses on managing patient health information and medical records in a healthcare setting.
+MEDICAL,UG,B.Sc. Clinical Psychology,A science-based degree focusing on the assessment and treatment of mental illness and behavioral problems.
+MEDICAL,UG,B.Sc. Clinical Nutrition & Dietetics,"The study of human nutrition and diet, and its role in preventing and treating diseases."
+LAW,UG,BA LLB (Bachelor of Arts & Bachelor of Laws),An integrated 5-year dual degree program combining the study of arts subjects with legal education.
+LAW,UG,BBA LLB (Bachelor of Business Administration & Bachelor of Laws),An integrated 5-year dual degree program combining the study of business management with legal education.
+LAW,UG,B.Com LLB (Bachelor of Commerce & Bachelor of Laws),An integrated 5-year dual degree program combining the study of commerce with legal education.
+ARCHITECTURE,UG,B.Arch (Bachelor of Architecture),"A 5-year professional degree program for aspiring architects, focusing on the art and science of building design."
+MANAGEMENT,UG,BBA (Bachelor of Business Administration),A 3-year undergraduate degree providing a broad foundation in business management and administration.
+MANAGEMENT,UG,BBA Aviation & Airport Management,"A specialized BBA focusing on the management of airline operations, airports, and the aviation business."
+MANAGEMENT,UG,BBA Logistics & Supply Chain Management,Focuses on managing the flow of goods and services from the point of origin to the point of consumption.
+MANAGEMENT,UG,BBA Digital Marketing,"A specialization in marketing products or services using digital technologies, primarily on the internet."
+MANAGEMENT,UG,BBA Entrepreneurship & Startup,A program designed to equip students with the skills needed to start and manage their own business ventures.
+MANAGEMENT,UG,BBA Tourism & Hospitality Management,Focuses on the business and management aspects of the tourism and hospitality industries.
+MANAGEMENT,UG,BBA Hospital Administration,A BBA specialization focused on the business side of managing healthcare and hospital facilities.
+MANAGEMENT,UG,BBA Business Analytics,"Combines business management with data analysis, teaching skills to make data-driven business decisions."
+MANAGEMENT,UG,BBA Computer Application,An integrated degree that combines business administration principles with computer applications.
+ARTS AND SCIENCE,PG,MCA (Master of Computer Application),"A postgraduate program designed to provide advanced skills in software development, system design, and computer networks."
+ARTS AND SCIENCE,PG,M.Sc Computer Science,"An advanced academic degree in computer science, focusing on theory, research, and specialized topics."
+ARTS AND SCIENCE,PG,M.Sc Cyber Security,A postgraduate program focused on advanced strategies for protecting digital assets and infrastructure.
+ARTS AND SCIENCE,PG,M.Com (Master of Commerce),"A postgraduate degree offering advanced study in accounting, finance, taxation, and business."
+ARTS AND SCIENCE,PG,M.Sc Bio-Technology,An advanced degree focusing on research and development in the application of biological systems for technology.
+ARTS AND SCIENCE,PG,M.Sc Microbiology,A postgraduate program offering specialized knowledge of microorganisms and their role in health and industry.
+ARTS AND SCIENCE,PG,M.Sc Applied Psychology,Focuses on the practical application of psychological principles to solve real-world problems in various fields.
+ARTS AND SCIENCE,PG,MSW (Master of Social Work),A professional postgraduate degree preparing students for advanced clinical or macro-level social work practice.
+ARTS AND SCIENCE,PG,M.A English Literature,A postgraduate degree involving in-depth study and critical analysis of literature in English.
+ARTS AND SCIENCE,PG,M.A Public Administration,A master's degree that prepares students for leadership roles in government and non-profit organizations.
+ARTS AND SCIENCE,PG,M.A Journalism and Mass Communication,"An advanced degree covering media theory, research, and specialized practice in journalism and communication."
+ARTS AND SCIENCE,PG,M.Com Computer Application,A postgraduate commerce degree that integrates advanced business concepts with IT and computer applications.
+ARTS AND SCIENCE,PG,M.Sc Clinical Psychology,A master's program providing advanced training in the diagnosis and treatment of psychological disorders.
+ARTS AND SCIENCE,PG,M.Sc Data Science and Business Analytics,A postgraduate program combining data science techniques with business strategy and decision-making.
+ARTS AND SCIENCE,PG,M.Sc Mathematics,An advanced degree offering in-depth study of pure and applied mathematics.
+ARTS AND SCIENCE,PG,M.Sc Forensic Science,A postgraduate program providing advanced training in scientific investigation techniques for legal purposes.
+MEDICAL,PG,M.Pharm (Master of Pharmacy),"A postgraduate degree in pharmacy offering specialization in areas like pharmaceutics, pharmacology, and pharmaceutical chemistry."
+MANAGEMENT,PG,MBA (Master of Business Administration),A prestigious postgraduate degree providing theoretical and practical training for business management.
+ENGINEERING,PG,M.Tech Aeronautical Engineering,"A postgraduate specialization in the design, construction, and science of aircraft."
+ENGINEERING,PG,M.Tech Artificial Intelligence & Data Science,An advanced engineering degree focusing on building intelligent systems and analyzing complex data.
+ENGINEERING,PG,M.Tech Artificial Intelligence & Machine Learning,A specialization in advanced algorithms and systems that enable machines to learn and reason.
+ENGINEERING,PG,M.Tech Automobile Engineering,"A postgraduate program focused on advanced topics in vehicle design, dynamics, and manufacturing."
+ENGINEERING,PG,M.Tech Biomedical Engineering,An advanced program applying engineering solutions to problems in biology and medicine.
+ENGINEERING,PG,M.Tech Biotechnology,"A postgraduate degree focused on using biological processes for industrial and other purposes, including research."
+ENGINEERING,PG,M.Tech Chemical Engineering,An advanced degree covering the design and management of large-scale chemical production processes.
+ENGINEERING,PG,M.Tech Communication Systems,"A specialization focusing on the design and analysis of modern communication technologies, both wired and wireless."
+ENGINEERING,PG,M.Tech Computer Science & Engineering,"A postgraduate program offering specialization in advanced areas like algorithms, systems, and AI."
+ENGINEERING,PG,M.Tech Construction Engineering & Management,A specialization combining civil engineering principles with management techniques for large construction projects.
+ENGINEERING,PG,M.Tech Cyber Security,"An advanced degree focused on the technical aspects of securing computer networks, systems, and data."
+ENGINEERING,PG,M.Tech Environmental Engineering,A specialization focused on developing solutions to environmental problems like pollution and waste management.
+ENGINEERING,PG,M.Tech Geotechnical Engineering,A civil engineering specialization dealing with the behavior of earth materials like soil and rock.
+ENGINEERING,PG,M.Tech Information Technology,"An advanced degree focusing on sophisticated topics in data management, networking, and software systems."
+ENGINEERING,PG,M.Tech Manufacturing Engineering,A specialization focused on optimizing complex manufacturing processes and systems.
+ENGINEERING,PG,M.Tech Mechatronics Engineering,"An advanced interdisciplinary program combining mechanics, electronics, and computing to create smarter systems."
+ENGINEERING,PG,M.Tech Power Electronics and Drives,A specialization in the control and conversion of electric power using solid-state electronics.
+ENGINEERING,PG,M.Tech Power Systems Engineering,"A specialization focused on the generation, transmission, and distribution of electrical power."
+ENGINEERING,PG,M.Tech Robotics & Automation,"An advanced program focused on the design, control, and application of robots and automated systems."
+ENGINEERING,PG,M.Tech Structural Engineering,"A civil engineering specialization focusing on the design and analysis of structures like buildings, bridges, and dams."
+ENGINEERING,PG,M.Tech Thermal Engineering,A mechanical engineering specialization dealing with heat energy and its transfer between systems.
+ENGINEERING,PG,M.Tech VLSI Design,"A specialization in Very Large Scale Integration, focusing on the design of integrated circuits and microchips."
