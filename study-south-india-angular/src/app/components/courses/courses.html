@@ -1,0 +1,12 @@
+
+  <ng-template pTemplate="header">
+    <tr>
+      <th *ngFor="let col of courses[0] | keyvalue">{{ col.key }}</th>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-row>
+    <tr>
+      <td *ngFor="let col of row | keyvalue">{{ col.value }}</td>
+    </tr>
+  </ng-template>
+
