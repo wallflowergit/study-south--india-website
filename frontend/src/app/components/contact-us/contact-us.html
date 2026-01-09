@@ -1,0 +1,75 @@
+<div class="contact-container">
+  <div class="contact-header">
+    <h1>Get in Touch</h1>
+    <p>Have questions about your education journey? We're here to help you every step of the way.</p>
+  </div>
+
+  <div class="contact-content">
+    <div class="contact-info">
+    <div class="contact-form">
+      <h2>Send Us a Message</h2>
+      <form (ngSubmit)="submitForm()">
+        <div class="form-group">
+          <label for="name">Full Name *</label>
+          <input 
+            type="text" 
+            id="name" 
+            [(ngModel)]="formData.name" 
+            name="name" 
+            required
+            placeholder="Enter your full name"
+          >
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email Address *</label>
+          <input 
+            type="email" 
+            id="email" 
+            [(ngModel)]="formData.email" 
+            name="email" 
+            required
+            placeholder="your.email@example.com"
+          >
+        </div>
+
+        <div class="form-group">
+          <label for="phone">Phone Number</label>
+          <input 
+            type="tel" 
+            id="phone" 
+            [(ngModel)]="formData.phone" 
+            name="phone"
+            placeholder="+1 (555) 000-0000"
+          >
+        </div>
+
+        <div class="form-group">
+          <label for="interest">I'm Interested In</label>
+          <select id="interest" [(ngModel)]="formData.interest" name="interest">
+            <option value="">Select an option</option>
+            <option *ngFor="let interest of interests" [value]="interest">
+              {{ interest }}
+            </option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="message">Your Message *</label>
+          <textarea 
+            id="message" 
+            [(ngModel)]="formData.message" 
+            name="message" 
+            rows="5" 
+            required
+            placeholder="Tell us about your educational goals and how we can help..."
+          ></textarea>
+        </div>
+
+        <button type="submit" class="submit-btn">Send Message</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<app-footer></app-footer>

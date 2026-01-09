@@ -1,0 +1,149 @@
+<div class="header-container">
+  <div class="header-start">
+    <div class="brand-text">
+      <img src="assets/logo.png" width="36px" alt="Logo">
+    </div>
+  </div>
+
+ <div class="header-center">
+  <p-tabs [value]="activeRoute">
+    <p-tablist>
+      @for(item of items; track item.route){
+        @if(item.route === '/institutions') {
+          <!-- Institutions tab with dropdown -->
+       <div class="tab-with-dropdown" 
+     (mouseenter)="stateMenu.show($event)" 
+     (mouseleave)="stateMenu.hide()">
+  <p-tab 
+    [value]="item.route" 
+    [routerLink]="item.route" 
+    class="flex items-center !gap-2 text-inherit">
+    <i [class]="item.icon"></i>
+    <span>{{ item.label }}</span>
+    <i class="pi pi-chevron-down dropdown-indicator"></i>
+  </p-tab>
+</div>
+
+<p-tieredMenu 
+  #stateMenu 
+  [model]="stateMenuItems" 
+  [popup]="true"
+  appendTo="body"
+  styleClass="state-menu-popup"
+  (onHide)="showStateDropdown = false">
+</p-tieredMenu>
+        } @else {
+          <!-- Regular tabs -->
+          <p-tab 
+            [value]="item.route" 
+            [routerLink]="item.route" 
+            class="flex items-center !gap-2 text-inherit">
+            <i [class]="item.icon"></i>
+            <span>{{ item.label }}</span>
+          </p-tab>
+        }
+      }
+    </p-tablist>
+  </p-tabs>
+</div>
+
+  <div class="header-end">
+     <button
+    class="apply-btn"
+    type="button"
+    (click)="openApplicationForm()">
+    Apply Now
+  </button>
+    <!-- Show Login Button if not logged in -->
+    <p-button 
+      *ngIf="!isLoggedIn"
+      label="Get Started" 
+      class="get-started-btn"
+      (onClick)="login()">
+    </p-button>
+    
+    <!-- Show User Info if logged in -->
+    <div *ngIf="isLoggedIn" class="user-section" (click)="userMenu.toggle($event)">
+      <div class="user-info">
+        <p-avatar 
+          [label]="getInitials()" 
+          shape="circle"
+          styleClass="user-avatar">
+        </p-avatar>
+        <span class="user-name">{{ getDisplayName() }}</span>
+      </div>
+      <button class="user-menu-trigger">
+        <i class="pi pi-chevron-down"></i>
+      </button>
+    </div>
+    
+    <p-menu 
+      #userMenu 
+      [model]="userMenuItems" 
+      [popup]="true"
+      appendTo="body"
+      styleClass="user-menu-popup">
+    </p-menu>
+    
+    <button class="mobile-menu-btn" (click)="toggleMobileMenu()">
+      <i class="pi pi-bars"></i>
+    </button>
+  </div>
+</div>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" [class.active]="mobileMenuOpen">
+  @for(item of items; track item.route){
+    <a 
+      [routerLink]="item.route" 
+      class="mobile-menu-item"
+      [class.active]="activeRoute === item.route"
+      (click)="closeMobileMenu()">
+      <i [class]="item.icon"></i>
+      <span>{{ item.label }}</span>
+    </a>
+  }
+  
+  <!-- Mobile Menu User Section -->
+  <div class="mobile-user-section" *ngIf="isLoggedIn">
+    <div class="mobile-user-info">
+      <p-avatar 
+        [label]="getInitials()" 
+        shape="circle"
+        size="large">
+      </p-avatar>
+      <div class="mobile-user-details">
+        <span class="mobile-user-name">{{ getDisplayName() }}</span>
+        <span class="mobile-user-email">{{ currentUser?.email }}</span>
+      </div>
+    </div>
+    <a 
+      routerLink="/profile" 
+      class="mobile-menu-item"
+      (click)="navigateToProfile()">
+      <i class="pi pi-user"></i>
+      <span>Profile</span>
+    </a>
+
+    <button 
+      class="mobile-menu-item logout-item"
+      (click)="logout()">
+      <i class="pi pi-sign-out"></i>
+      <span>Logout</span>
+    </button>
+  </div>
+  
+  <!-- Mobile Menu Login Button -->
+  <div class="mobile-login-section" *ngIf="!isLoggedIn">
+    <p-button 
+      label="Get Started" 
+      class="w-full"
+      (onClick)="login()">
+    </p-button>
+  </div>
+</div>
+
+<app-application-form
+  *ngIf="showApplicationForm"
+  (close)="closeApplicationForm()">
+</app-application-form>

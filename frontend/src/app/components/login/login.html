@@ -1,0 +1,168 @@
+<div class="login-container">
+  <div class="login-wrapper">
+    
+    <!-- Show User Details if Logged In -->
+    <div class="user-details-card" *ngIf="isLoggedIn && currentUser">
+      <div class="user-header">
+        <div class="user-avatar-section">
+          <p-avatar 
+            [label]="getInitials()" 
+            size="xlarge" 
+            shape="circle"
+            styleClass="user-avatar">
+          </p-avatar>
+        </div>
+        <div class="user-info">
+          <h2 class="user-name">{{ getDisplayName() }}</h2>
+          <p class="user-email">{{ currentUser.email }}</p>
+          <p class="user-username" *ngIf="currentUser.username">@{{ currentUser.username }}</p>
+        </div>
+      </div>
+
+      <div class="user-details-content">
+        <div class="detail-item" *ngIf="currentUser.first_name">
+          <i class="pi pi-user"></i>
+          <div class="detail-text">
+            <span class="detail-label">First Name</span>
+            <span class="detail-value">{{ currentUser.first_name }}</span>
+          </div>
+        </div>
+
+        <div class="detail-item" *ngIf="currentUser.last_name">
+          <i class="pi pi-user"></i>
+          <div class="detail-text">
+            <span class="detail-label">Last Name</span>
+            <span class="detail-value">{{ currentUser.last_name }}</span>
+          </div>
+        </div>
+
+        <!-- <div class="detail-item">
+          <i class="pi pi-id-card"></i>
+          <div class="detail-text">
+            <span class="detail-label">User ID</span>
+            <span class="detail-value">#{{ currentUser.id }}</span>
+          </div>
+        </div> -->
+      </div>
+
+      <div class="user-actions">
+        <button 
+          pButton 
+          label="Go to Home"
+          icon="pi pi-home"
+          (click)="navigateToDashboard()"
+          class="dashboard-button">
+        </button>
+        <button 
+          pButton 
+          label="Logout"
+          icon="pi pi-sign-out"
+          (click)="logout()"
+          class="logout-button"
+          severity="danger">
+        </button>
+      </div>
+    </div>
+
+    <!-- Show Login Form if Not Logged In -->
+    <div class="login-card" *ngIf="!isLoggedIn">
+      <!-- Header -->
+      <div class="login-header">
+        <h2 class="login-title">Welcome Back</h2>
+        <p class="login-subtitle">Sign in to continue your journey</p>
+      </div>
+
+      <!-- Error Message -->
+      <p-message 
+        *ngIf="error" 
+        severity="error" 
+        [text]="error"
+        styleClass="error-message">
+      </p-message>
+
+      <!-- Login Form -->
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="login-form">
+        <!-- Email Field -->
+        <div class="form-field">
+          <label for="email" class="field-label">Email Address</label>
+          <span class="p-input-icon-left w-full">
+            <i class="pi pi-envelope"></i>
+            <input 
+              pInputText 
+              id="email" 
+              type="email"
+              formControlName="email"
+              placeholder="you@example.com"
+              class="w-full"
+              [class.p-invalid]="isFieldInvalid('email')"
+            />
+          </span>
+          <small class="field-error" *ngIf="isFieldInvalid('email')">
+            {{ getFieldError('email') }}
+          </small>
+        </div>
+
+        <!-- Password Field -->
+        <div class="form-field">
+          <label for="password" class="field-label">Password</label>
+          <span class="p-input-icon-left p-input-icon-right w-full password-wrapper">
+            <i class="pi pi-lock"></i>
+            <input 
+              pInputText
+              id="password" 
+              [type]="showPassword ? 'text' : 'password'"
+              formControlName="password"
+              placeholder="******"
+              class="w-full"
+              [class.p-invalid]="isFieldInvalid('password')"
+            />
+            <i 
+              [class]="showPassword ? 'pi pi-eye-slash' : 'pi pi-eye'"
+              (click)="togglePasswordVisibility()"
+              class="password-toggle">
+            </i>
+          </span>
+          <small class="field-error" *ngIf="isFieldInvalid('password')">
+            {{ getFieldError('password') }}
+          </small>
+        </div>
+
+        <!-- Remember Me & Forgot Password -->
+        <div class="form-options">
+          <div class="remember-me">
+            <p-checkbox 
+              [(ngModel)]="rememberMe" 
+              [ngModelOptions]="{standalone: true}"
+              [binary]="true" 
+              inputId="remember">
+            </p-checkbox>
+            <label for="remember" class="remember-label">Remember me</label>
+          </div>
+          <a routerLink="/forgot-password" class="forgot-link">
+            Forgot password?
+          </a>
+        </div>
+
+        <!-- Submit Button -->
+        <button 
+          pButton 
+          type="submit"
+          [loading]="loading"
+          [disabled]="loading"
+          class="submit-button w-full">
+          <span *ngIf="loading">
+            <i class="pi pi-spinner pi-spin"></i> Signing in...
+          </span>
+          <span *ngIf="!loading">Sign In</span>
+        </button>
+      </form>
+
+      <!-- Sign Up Link -->
+      <p class="signup-text">
+        Don't have an account? 
+        <a routerLink="/register" class="signup-link">Sign up</a>
+      </p>
+    </div>
+    
+  </div>
+</div>

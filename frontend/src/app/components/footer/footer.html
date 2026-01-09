@@ -1,0 +1,62 @@
+<!-- src/app/components/footer/footer.component.html -->
+<footer class="footer">
+  <div class="footer-content">
+    <!-- Brand Section -->
+    <div class="footer-brand">
+      <img src="assets/logo-white.png" alt="Study South India" class="footer-logo">
+      <p class="footer-tagline">Your trusted partner in educational guidance</p>
+    </div>
+
+    <!-- Navigation Links -->
+    <nav class="footer-nav">
+      <a 
+        *ngFor="let link of footerLinks" 
+        [routerLink]="link.route"
+        routerLinkActive="active"
+      >
+        {{ link.label }}
+      </a>
+    </nav>
+
+    <!-- Social Links -->
+    <div class="footer-social">
+      <a 
+        *ngFor="let social of socialLinks"
+        [href]="social.url" 
+        target="_blank"
+        rel="noopener noreferrer"
+        class="social-link"
+        [attr.aria-label]="social.label"
+        (click)="onSocialClick(social.label)"
+      >
+        <i [class]="social.icon"></i>
+      </a>
+    </div>
+  </div>
+
+  <!-- Optional: Contact Information Section -->
+  <div class="footer-contact" *ngIf="contactInfo">
+    <div class="contact-item">
+      <i class="pi pi-phone"></i>
+      <span>{{ contactInfo.phone }}</span>
+    </div>
+    <div class="contact-item">
+      <i class="pi pi-envelope"></i>
+      <span>{{ contactInfo.email }}</span>
+    </div>
+    <div class="contact-item">
+      <i class="pi pi-map-marker"></i>
+      <span>{{ contactInfo.address }}</span>
+    </div>
+  </div>
+
+  <!-- Bottom Section -->
+  <div class="footer-bottom">
+    <p>© {{ currentYear }} Study South India. All rights reserved.</p>
+    <div class="footer-legal">
+      <a routerLink="/privacy-policy">Privacy Policy</a>
+      <span class="separator">|</span>
+      <a routerLink="/terms">Terms & Conditions</a>
+    </div>
+  </div>
+</footer>

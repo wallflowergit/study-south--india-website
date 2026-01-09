@@ -1,0 +1,721 @@
+/* Header container */
+.header-container {
+  background: rgba(248, 249, 252, 0.8);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: none;
+  padding: 0.75rem 3rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+/* Logo section */
+.header-start {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-shrink: 0;
+}
+
+/* Logo icon styling */
+.logo-icon {
+  width: 50px;
+  height: 50px;
+  background: #0066ff;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 24px;
+  box-shadow: 0 4px 12px rgba(0, 102, 255, 0.3);
+}
+
+/* Brand text container */
+.brand-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+/* Main brand name */
+.text-primary {
+  color: #1e293b !important;
+  font-size: 1rem !important;
+  font-weight: 500 !important;
+  line-height: 1.2;
+  letter-spacing: -0.2px;
+}
+
+/* Tagline */
+.brand-tagline {
+  color: #0066ff;
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.2px;
+}
+
+/* Center tabs section */
+.header-center {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 791px;
+}
+
+::ng-deep .header-center .p-tab {
+  background: transparent;
+  border: none;
+  border-bottom: 3px solid transparent; /* Always have a bottom border */
+  border-radius: 8px 8px 0 0;
+  padding: 0rem 1.5rem;
+  color: #475569;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: background 0.2s ease, color 0.2s ease; /* Removed border-bottom-color transition */
+  cursor: pointer;
+  will-change: background, color; /* Performance optimization */
+}
+
+/* Keep the height and padding consistent */
+::ng-deep .header-center .p-tablist {
+  display: flex;
+  gap: 1rem;
+}
+
+::ng-deep .header-center .p-tab[aria-selected="true"] {
+  color: #1e3a8a;
+  border-bottom-color: #1e3a8a;
+}
+
+/* Tab hover state */
+::ng-deep .header-center .p-tab:hover {
+  background: rgba(0, 102, 255, 0.05); /* Change background on hover */
+  border-bottom-color: rgba(0, 102, 255, 0.3); /* Keep border color change smooth */
+}
+
+/* End section */
+.header-end {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-shrink: 0;
+}
+
+/* Get Started button styling */
+.get-started-btn {
+  padding: 0 17px;
+  height: 36px;
+  background: #1e293b;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 14px;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.get-started-btn:hover {
+  background: #334155 !important;
+  transform: translateY(-2px);
+}
+
+.get-started-btn:active {
+  transform: translateY(0);
+}
+
+/* User Section (Desktop) */
+.user-section {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  border-radius: 12px;
+  border: 2px solid #e2e8f0;
+  background: white;
+  transition: all 0.3s ease;
+  cursor: pointer;
+
+  &:hover {
+    background: #f8fafc;
+    border-color: #cbd5e1;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  }
+
+  .user-info {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+
+    ::ng-deep .user-avatar {
+      background: #1756a5;
+      color: white;
+      font-weight: 600;
+      font-size: 13px;
+      width: 32px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .user-name {
+      font-weight: 500;
+      color: #1e293b;
+      font-size: 0.9rem;
+      letter-spacing: -0.1px;
+    }
+  }
+
+  .user-menu-trigger {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #64748b;
+    padding: 0.25rem;
+    display: flex;
+    align-items: center;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: #1e293b;
+    }
+
+    i {
+      font-size: 0.875rem;
+    }
+  }
+}
+
+/* Mobile menu button */
+.mobile-menu-btn {
+  display: none;
+  color: #475569;
+  background: transparent;
+  border: 2px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 0.5rem 0.75rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  font-size: 1.25rem;
+}
+
+.mobile-menu-btn:hover {
+  background: #f1f5f9;
+  border-color: #cbd5e1;
+}
+
+.mobile-menu-btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(0, 102, 255, 0.2);
+  border-color: #0066ff;
+}
+
+/* Mobile menu dropdown */
+.mobile-menu {
+  display: none;
+  position: fixed;
+  top: 88px;
+  left: 0;
+  right: 0;
+  background: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border-radius: 0 0 12px 12px;
+  z-index: 999;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  padding: 0 1rem;
+}
+
+.mobile-menu.active {
+  max-height: 600px;
+  padding: 1rem;
+}
+
+.mobile-menu-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.875rem 1rem;
+  color: #475569;
+  text-decoration: none;
+  border-radius: 8px;
+  margin-bottom: 0.25rem;
+  transition: all 0.2s ease;
+  font-weight: 500;
+  border: none;
+  background: transparent;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  font-size: 0.95rem;
+}
+
+.mobile-menu-item:hover {
+  background: #f1f5f9;
+  color: #0066ff;
+}
+
+.mobile-menu-item.active {
+  background: #eff6ff;
+  color: #0066ff;
+  font-weight: 600;
+}
+
+.mobile-menu-item i {
+  font-size: 1.1rem;
+}
+
+.mobile-menu-item.logout-item {
+  color: #dc2626;
+  margin-top: 0.5rem;
+  border-top: 1px solid #e5e7eb;
+  padding-top: 1.25rem;
+
+  i {
+    color: #dc2626;
+  }
+
+  &:hover {
+    background: #fef2f2;
+    color: #dc2626;
+  }
+}
+
+/* Mobile User Section */
+.mobile-user-section {
+  padding: 1rem;
+  background: #f8fafc;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+
+  .mobile-user-info {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #e2e8f0;
+
+    ::ng-deep .p-avatar {
+      background: linear-gradient(135deg, #0066ff 0%, #0052cc 100%);
+      color: white;
+      font-weight: 600;
+    }
+
+    .mobile-user-details {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+
+      .mobile-user-name {
+        font-weight: 600;
+        color: #1e293b;
+        font-size: 1rem;
+      }
+
+      .mobile-user-email {
+        font-size: 0.85rem;
+        color: #64748b;
+      }
+    }
+  }
+}
+
+.mobile-login-section {
+  padding: 1rem;
+  border-top: 1px solid #e5e7eb;
+  margin-top: 1rem;
+}
+
+/* User Menu Popup */
+::ng-deep {
+  .p-menu.user-menu-popup {
+    margin-top: 0.5rem !important;
+    border: 1px solid #e2e8f0 !important;
+    border-radius: 12px !important;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12) !important;
+    z-index: 9999 !important;
+    min-width: 200px !important;
+    background: white !important;
+    padding: 1rem !important;
+
+    .p-menu-list {
+      padding: 0 !important;
+      gap: 6px;
+    }
+.p-menu-item-label {
+    line-height: 2;
+}
+
+.p-menu-item:not(.p-disabled) .p-menu-item-content:hover {
+    background: aliceblue;
+    border-radius: 4px;
+}
+
+.p-menu-item-content {
+    padding: 0 8px;
+}
+    
+    .p-menuitem {
+      margin: 0 !important;
+
+      .p-menuitem-content {
+        border-radius: 8px !important;
+        margin: 0.25rem 0 !important;
+        transition: all 0.2s ease !important;
+
+        .p-menuitem-link {
+          padding: 0.75rem 1rem !important;
+          border-radius: 8px !important;
+          display: flex !important;
+          align-items: center !important;
+          gap: 0.75rem !important;
+          
+          .p-menuitem-icon {
+            color: #64748b !important;
+            font-size: 1rem !important;
+            margin: 0 !important;
+          }
+
+          .p-menuitem-text {
+            color: #1e293b !important;
+            font-weight: 500 !important;
+            font-size: 0.9rem !important;
+          }
+
+          &:hover {
+            background: #f8fafc !important;
+
+            .p-menuitem-icon {
+              color: #0066ff !important;
+            }
+
+            .p-menuitem-text {
+              color: #0066ff !important;
+            }
+          }
+        }
+      }
+
+      &.p-menuitem-separator {
+        margin: 0.5rem 0 !important;
+        border-top: 1px solid #e5e7eb !important;
+        height: 1px !important;
+        padding: 0 !important;
+      }
+
+      // Logout item styling
+      &:last-child {
+        .p-menuitem-content {
+          .p-menuitem-link {
+            .p-menuitem-icon,
+            .p-menuitem-text {
+              color: #dc2626 !important;
+            }
+
+            &:hover {
+              background: #fef2f2 !important;
+
+              .p-menuitem-icon,
+              .p-menuitem-text {
+                color: #dc2626 !important;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // Ensure menu overlay has proper z-index
+  .p-menu-overlay {
+    z-index: 9999 !important;
+  }
+}
+
+/* Mobile responsive */
+@media screen and (max-width: 960px) {
+  .header-container {
+    padding: 1rem 1.5rem;
+  }
+
+  .header-start {
+    gap: 0.75rem;
+  }
+
+  .logo-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+  }
+
+  .text-primary {
+    font-size: 0.95rem !important;
+  }
+
+  .brand-tagline {
+    font-size: 0.7rem;
+  }
+
+  /* Hide desktop tabs */
+  .header-center {
+    display: none;
+  }
+
+  /* Hide desktop user section */
+  .user-section {
+    display: none;
+  }
+
+  /* Show mobile menu button */
+  .mobile-menu-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Show mobile menu */
+  .mobile-menu {
+    display: block;
+  }
+
+  /* Adjust button size */
+  .get-started-btn {
+    padding: 0.5rem 1.25rem !important;
+    font-size: 0.85rem !important;
+    height: auto;
+  }
+
+  .header-end {
+    gap: 0.75rem;
+  }
+}
+
+/* Smooth animations */
+.get-started-btn,
+.mobile-menu-btn,
+.mobile-menu-item,
+::ng-deep .header-center .p-tab {
+  transition: all 0.3s ease;
+}
+
+::ng-deep .p-tablist-tab-list {
+  border: none !important;
+}
+
+/* Tab with dropdown wrapper */
+.tab-with-dropdown {
+  position: relative;
+  display: inline-block;
+  
+  ::ng-deep .p-tab {
+    .dropdown-indicator {
+      font-size: 0.75rem;
+      margin-left: 0.25rem;
+      transition: transform 0.3s ease;
+    }
+  }
+  
+  &:hover {
+    ::ng-deep .p-tab .dropdown-indicator {
+      transform: rotate(180deg);
+    }
+  }
+}
+
+/* State dropdown */
+.state-dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  border: 1px solid #e2e8f0;
+  min-width: 220px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(-50%) translateY(-10px);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 1001;
+  
+  &.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+  }
+  
+  /* Dropdown arrow */
+  &::before {
+    content: '';
+    position: absolute;
+    top: -6px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 12px;
+    height: 12px;
+    background: white;
+    border-left: 1px solid #e2e8f0;
+    border-top: 1px solid #e2e8f0;
+    transform: translateX(-50%) rotate(45deg);
+  }
+  
+  .dropdown-header {
+    padding: 0.875rem 1rem;
+    border-bottom: 1px solid #e2e8f0;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 600;
+    font-size: 0.875rem;
+    color: #1e293b;
+    background: #f8fafc;
+    border-radius: 12px 12px 0 0;
+    
+    i {
+      color: #0066ff;
+      font-size: 0.875rem;
+    }
+  }
+  
+  .dropdown-options {
+    padding: 0.5rem;
+    max-height: 300px;
+    overflow-y: auto;
+    
+    /* Custom scrollbar */
+    &::-webkit-scrollbar {
+      width: 6px;
+    }
+    
+    &::-webkit-scrollbar-track {
+      background: #f1f5f9;
+      border-radius: 3px;
+    }
+    
+    &::-webkit-scrollbar-thumb {
+      background: #cbd5e1;
+      border-radius: 3px;
+      
+      &:hover {
+        background: #94a3b8;
+      }
+    }
+  }
+  
+  .dropdown-option {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-decoration: none;
+    color: #475569;
+    font-size: 0.9rem;
+    font-weight: 500;
+    position: relative;
+    
+    i.pi-map-marker {
+      color: #64748b;
+      font-size: 0.875rem;
+      flex-shrink: 0;
+    }
+    
+    span {
+      flex: 1;
+    }
+    
+    .check-icon {
+      color: #0066ff;
+      font-size: 0.875rem;
+      margin-left: auto;
+    }
+    
+    &:hover {
+      background: #f8fafc;
+      color: #0066ff;
+      
+      i.pi-map-marker {
+        color: #0066ff;
+      }
+    }
+    
+    &.selected {
+      background: #eff6ff;
+      color: #0066ff;
+      font-weight: 600;
+      
+      i.pi-map-marker {
+        color: #0066ff;
+      }
+    }
+  }
+}
+
+/* Prevent dropdown from closing when clicking inside */
+.state-dropdown * {
+  pointer-events: auto;
+}
+
+/* Ensure proper z-index layering */
+::ng-deep .header-center {
+  position: relative;
+  z-index: 100;
+}
+
+/* Mobile - hide dropdown functionality */
+@media screen and (max-width: 960px) {
+  .tab-with-dropdown {
+    .state-dropdown {
+      display: none;
+    }
+    
+    ::ng-deep .p-tab .dropdown-indicator {
+      display: none;
+    }
+  }
+}
+
+::ng-deep .state-menu-popup{
+      margin-top: 0.5rem !important;
+    border: 1px solid #e2e8f0 !important;
+    border-radius: 12px !important;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12) !important;
+    z-index: 9999 !important;
+    min-width: 200px !important;
+    background: white !important;
+    padding: 1rem !important;
+}
+
+.apply-btn {
+  background: transparent;
+  border: 1px solid #4f46e5;
+  color: #4f46e5;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 14px;
+  cursor: pointer;
+  margin-right: 10px;
+  transition: all 0.2s ease;
+
+  &:hover {
+    background: #4f46e5;
+    color: #fff;
+  }
+}

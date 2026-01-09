@@ -1,0 +1,120 @@
+<div class="course-list-page">
+  <!-- Hero Section -->
+  <div class="hero-section">
+    <div class="hero-content">
+      <h1 class="hero-title">Explore Our Course Offerings</h1>
+      <p class="hero-subtitle">Discover diverse courses across multiple streams including Engineering, Medical, Arts, Commerce, and more. Find the perfect course to kickstart your career.</p>
+    </div>
+
+    <!-- Search Section -->
+    <div class="search-section">
+      <div class="search-wrapper">
+        <div class="search-box">
+          <i class="pi pi-search search-icon"></i>
+          <input 
+            type="text" 
+            pInputText
+            class="search-input" 
+            [(ngModel)]="searchQuery"
+            (input)="onSearchInput($event)"
+            (keyup.enter)="searchCourses()"
+            placeholder="Search by course name, code, or stream...">
+        </div>
+        <div class="results-info">
+          <span class="results-count">{{ getPaginationInfo() }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Container -->
+  <div class="container">
+    <!-- Loading Skeleton -->
+    <div *ngIf="loading" class="cards-grid">
+      <div class="course-card skeleton-card" *ngFor="let item of [1,2,3,4,5,6,7,8,9]">
+        <p-skeleton height="200px" styleClass="skeleton-image"></p-skeleton>
+        <div class="card-content">
+          <p-skeleton width="80%" height="1.5rem" styleClass="mb-3"></p-skeleton>
+          <p-skeleton width="60%" height="1rem" styleClass="mb-2"></p-skeleton>
+          <p-skeleton width="50%" height="1rem"></p-skeleton>
+        </div>
+      </div>
+    </div>
+
+    <!-- Course Cards -->
+    <div *ngIf="!loading && paginatedCourses.length > 0" class="cards-grid">
+      <div class="course-card" *ngFor="let course of paginatedCourses">
+        <div class="card-image-wrapper">
+          <img 
+            [src]="getCourseImage(course)" 
+            [alt]="course.name"
+            class="card-image"
+            (error)="$any($event.target).src='assets/images/course-placeholder.png'">
+          <div class="card-overlay">
+            <span class="view-details">View Details</span>
+          </div>
+        </div>
+        <div class="card-content">
+          <h3 class="card-title">{{ course.name }}</h3>
+          <p class="card-description">{{ course.description || 'Explore this course to learn more about career opportunities and requirements.' }}</p>
+          <div class="card-info">
+            <div class="info-item">
+              <i class="pi pi-book"></i>
+              <span>{{ course.stream }}</span>
+            </div>
+            <div class="info-item">
+              <i class="pi pi-clock"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Empty State -->
+    <div *ngIf="!loading && paginatedCourses.length === 0" class="empty-state">
+      <div class="empty-icon-wrapper">
+        <i class="pi pi-book empty-icon"></i>
+      </div>
+      <h2 class="empty-title">No Courses Found</h2>
+      <p class="empty-text">We couldn't find any courses matching your search criteria.</p>
+      <p-button 
+        label="Clear Search" 
+        icon="pi pi-times" 
+        (onClick)="searchQuery = ''; loadCourses()"
+        styleClass="p-button-outlined clear-btn">
+      </p-button>
+    </div>
+
+    <!-- Pagination -->
+    <div *ngIf="!loading && totalPages > 1" class="pagination">
+      <p-button 
+        icon="pi pi-angle-left" 
+        [disabled]="currentPage === 1"
+        (onClick)="changePage(currentPage - 1)"
+        styleClass="p-button-text p-button-plain pagination-nav">
+      </p-button>
+
+      <div class="page-numbers">
+        <ng-container *ngFor="let page of getPageNumbers()">
+          <p-button 
+            *ngIf="page !== '...'"
+            [label]="page.toString()" 
+            [outlined]="currentPage !== page"
+            [styleClass]="currentPage === page ? 'page-btn active' : 'page-btn'"
+            (onClick)="changePage(+page)">
+          </p-button>
+          <span *ngIf="page === '...'" class="pagination-dots">...</span>
+        </ng-container>
+      </div>
+
+      <p-button 
+        icon="pi pi-angle-right" 
+        [disabled]="currentPage === totalPages"
+        (onClick)="changePage(currentPage + 1)"
+        styleClass="p-button-text p-button-plain pagination-nav">
+      </p-button>
+    </div>
+  </div>
+  
+  <app-footer></app-footer>
+</div>

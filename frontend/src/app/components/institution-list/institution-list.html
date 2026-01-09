@@ -1,0 +1,156 @@
+<div class="institution-page">
+  <!-- Hero Section -->
+  <div class="hero-section">
+    <div class="hero-content">
+      <h1 class="hero-title">Explore Our Partner Institutions</h1>
+      <p class="hero-subtitle">Discover 123+ premier educational institutions across Karnataka, Tamil Nadu, Kerala, and Andhra Pradesh. Find the perfect match for your academic journey.</p>
+    </div>
+
+        <!-- Search Section -->
+    <div class="search-section">
+      <div class="search-wrapper">
+        <div class="search-box">
+          <i class="pi pi-search search-icon"></i>
+          <input 
+            type="text" 
+            pInputText
+            class="search-input" 
+            [(ngModel)]="searchTerm"
+            (input)="onSearch()"
+            placeholder="Search by name, location, or state...">
+        </div>
+        <div class="results-info">
+          <span class="results-count">{{ getPaginationInfo() }}</span>
+        </div>
+      </div>
+    </div>
+    <!-- Filter Section -->
+<div class="filter-section">
+  <div class="filter-wrapper">
+    <span class="filter-label">Filter by State:</span>
+    <div class="filter-buttons">
+      <p-button 
+        label="All States" 
+        [outlined]="selectedState !== ''"
+        (onClick)="filterByState('')"
+        styleClass="filter-btn">
+      </p-button>
+      <p-button 
+        label="Karnataka" 
+        [outlined]="selectedState !== 'Karnataka'"
+        (onClick)="filterByState('Karnataka')"
+        styleClass="filter-btn">
+      </p-button>
+      <p-button 
+        label="Tamil Nadu" 
+        [outlined]="selectedState !== 'Tamil Nadu'"
+        (onClick)="filterByState('Tamil Nadu')"
+        styleClass="filter-btn">
+      </p-button>
+      <p-button 
+        label="Kerala" 
+        [outlined]="selectedState !== 'Kerala'"
+        (onClick)="filterByState('Kerala')"
+        styleClass="filter-btn">
+      </p-button>
+      <p-button 
+        label="Andhra Pradesh" 
+        [outlined]="selectedState !== 'Andhra Pradesh'"
+        (onClick)="filterByState('Andhra Pradesh')"
+        styleClass="filter-btn">
+      </p-button>
+    </div>
+  </div>
+</div>
+  </div>
+
+  <!-- Main Container -->
+  <div class="container">
+    <!-- Loading Skeleton -->
+    <div *ngIf="isLoading" class="cards-grid">
+      <div class="institution-card skeleton-card" *ngFor="let item of [1,2,3,4,5,6,7,8,9]">
+        <p-skeleton height="240px" styleClass="skeleton-image"></p-skeleton>
+        <div class="card-content">
+          <p-skeleton width="80%" height="1.5rem" styleClass="mb-3"></p-skeleton>
+          <p-skeleton width="60%" height="1rem" styleClass="mb-2"></p-skeleton>
+          <p-skeleton width="50%" height="1rem"></p-skeleton>
+        </div>
+      </div>
+    </div>
+
+    <!-- Institution Cards -->
+    <div *ngIf="!isLoading && paginatedInstitutions.length > 0" class="cards-grid">
+      <div class="institution-card" *ngFor="let institution of paginatedInstitutions">
+        <div class="card-image-wrapper">
+          <img 
+            [src]="getInstitutionImage(institution)" 
+            [alt]="institution.name"
+            class="card-image"
+            (error)="$any($event.target).src='assets/images/institution-placeholder.png'">
+          <div class="card-overlay">
+            <span class="view-details">View Details</span>
+          </div>
+        </div>
+        <div class="card-content">
+          <h3 class="card-title">{{ institution.name }}</h3>
+          <div class="card-info">
+            <div class="info-item">
+              <i class="pi pi-map-marker"></i>
+              <span>{{ institution.location }}</span>
+            </div>
+            <div class="info-item">
+              <i class="pi pi-globe"></i>
+              <span>{{ institution.state }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Empty State -->
+    <div *ngIf="!isLoading && paginatedInstitutions.length === 0" class="empty-state">
+      <div class="empty-icon-wrapper">
+        <i class="pi pi-building empty-icon"></i>
+      </div>
+      <h2 class="empty-title">No Institutions Found</h2>
+      <p class="empty-text">We couldn't find any institutions matching your search criteria.</p>
+      <p-button 
+        label="Clear Search" 
+        icon="pi pi-times" 
+        (onClick)="searchTerm = ''; onSearch()"
+        styleClass="p-button-outlined clear-btn">
+      </p-button>
+    </div>
+
+    <!-- Pagination -->
+    <div *ngIf="!isLoading && totalPages > 1" class="pagination">
+      <p-button 
+        icon="pi pi-angle-left" 
+        [disabled]="currentPage === 1"
+        (onClick)="changePage(currentPage - 1)"
+        styleClass="p-button-text p-button-plain pagination-nav">
+      </p-button>
+
+      <div class="page-numbers">
+        <ng-container *ngFor="let page of getPageNumbers()">
+          <p-button 
+            *ngIf="page !== '...'"
+            [label]="page.toString()" 
+            [outlined]="currentPage !== page"
+            [styleClass]="currentPage === page ? 'page-btn active' : 'page-btn'"
+            (onClick)="changePage(+page)">
+          </p-button>
+          <span *ngIf="page === '...'" class="pagination-dots">...</span>
+        </ng-container>
+      </div>
+
+      <p-button 
+        icon="pi pi-angle-right" 
+        [disabled]="currentPage === totalPages"
+        (onClick)="changePage(currentPage + 1)"
+        styleClass="p-button-text p-button-plain pagination-nav">
+      </p-button>
+    </div>
+  </div>
+    <app-footer></app-footer>
+</div>

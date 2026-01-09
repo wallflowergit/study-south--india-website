@@ -1,0 +1,47 @@
+<div class="overlay">
+  <div class="popup">
+    <div class="header">
+      <h2>Application Form</h2>
+      <button class="close-btn" (click)="closePopup()">✕</button>
+    </div>
+
+    <form (ngSubmit)="submitForm()">
+      <h3>Student Details</h3>
+      <input placeholder="Student Name" [(ngModel)]="formData.studentName" name="studentName" required />
+      <input placeholder="Student Number" [(ngModel)]="formData.studentNumber" name="studentNumber" />
+      <input placeholder="Student Email" [(ngModel)]="formData.studentEmail" name="studentEmail" />
+      <input placeholder="Course" [(ngModel)]="formData.course" name="course" />
+      <input placeholder="College" [(ngModel)]="formData.college" name="college" />
+
+      <h3>Parent Details</h3>
+      <input placeholder="Father Name" [(ngModel)]="formData.fatherName" name="fatherName" />
+      <input placeholder="Father Occupation" [(ngModel)]="formData.fatherOccupation" name="fatherOccupation" />
+      <input placeholder="Father Mobile Number" [(ngModel)]="formData.fatherMobile" name="fatherMobile" />
+
+      <input placeholder="Mother Name" [(ngModel)]="formData.motherName" name="motherName" />
+      <input placeholder="Mother Mobile Number" [(ngModel)]="formData.motherMobile" name="motherMobile" />
+
+      <h3>Personal Information</h3>
+      <textarea placeholder="Address" [(ngModel)]="formData.address" name="address"></textarea>
+      <input type="date" [(ngModel)]="formData.dob" name="dob" />
+      <input placeholder="Aadhaar Number" [(ngModel)]="formData.aadhaar" name="aadhaar" />
+      <input placeholder="Nationality" [(ngModel)]="formData.nationality" name="nationality" />
+      <input placeholder="Religion" [(ngModel)]="formData.religion" name="religion" />
+      <input placeholder="Community" [(ngModel)]="formData.community" name="community" />
+      <input placeholder="Caste Name" [(ngModel)]="formData.caste" name="caste" />
+      <input placeholder="Blood Group" [(ngModel)]="formData.bloodGroup" name="bloodGroup" />
+
+      <h3>12th Academic Details</h3>
+      <input placeholder="School Name" [(ngModel)]="formData.school12" name="school12" />
+      <input placeholder="Board" [(ngModel)]="formData.board12" name="board12" />
+      <input placeholder="Percentage" [(ngModel)]="formData.percentage12" name="percentage12" />
+      <input placeholder="Year of Passing" [(ngModel)]="formData.passoutYear" name="passoutYear" />
+      <input placeholder="Course / Stream" [(ngModel)]="formData.course12" name="course12" />
+
+      <div class="actions">
+        <button type="button" class="secondary" (click)="closePopup()">Cancel</button>
+        <button type="submit" class="primary">Submit</button>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,243 @@
+// src/app/components/footer/footer.component.scss
+
+// Variables
+$footer-bg: #1e3a8a;
+$footer-text: #ffffff;
+$footer-text-muted: rgba(255, 255, 255, 0.8);
+$footer-border: rgba(255, 255, 255, 0.1);
+$footer-hover: rgba(255, 255, 255, 0.2);
+
+.footer {
+  background: $footer-bg;
+  color: $footer-text;
+  padding: 40px 20px 20px;
+  margin-top: auto; // Sticky footer support
+  
+  .footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    gap: 40px;
+    
+    @media (max-width: 968px) {
+      flex-direction: column;
+      text-align: center;
+      gap: 30px;
+    }
+  }
+  
+  // Brand Section
+  .footer-brand {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    
+    @media (max-width: 968px) {
+      align-items: center;
+    }
+    
+    .footer-logo {
+      height: 64px;
+      width: auto;
+      object-fit: contain;
+      align-self: self-start;
+    }
+    
+    .footer-tagline {
+      font-size: 0.9rem;
+      color: $footer-text-muted;
+      margin: 0;
+      max-width: 250px;
+      
+      @media (max-width: 968px) {
+        text-align: center;
+      }
+    }
+  }
+  
+  // Navigation Links
+  .footer-nav {
+    display: flex;
+    gap: 30px;
+    
+    @media (max-width: 768px) {
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+    
+    a {
+      color: $footer-text;
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: all 0.3s ease;
+      position: relative;
+      padding: 5px 0;
+      
+      &:hover {
+        opacity: 0.8;
+      }
+      
+      // Active link indicator
+      &.active {
+        font-weight: 600;
+        
+        &::after {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          height: 2px;
+          background: $footer-text;
+        }
+      }
+    }
+  }
+  
+  // Social Links
+  .footer-social {
+    display: flex;
+    gap: 15px;
+    
+    .social-link {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: $footer-text;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      font-size: 1.1rem;
+      
+      &:hover {
+        background: $footer-hover;
+        transform: translateY(-3px);
+      }
+      
+      &:active {
+        transform: translateY(-1px);
+      }
+      
+      i {
+        font-size: 1rem;
+      }
+    }
+  }
+  
+  // Contact Information Section
+  .footer-contact {
+    max-width: 1200px;
+    margin: 30px auto;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    padding: 20px 0;
+    border-top: 1px solid $footer-border;
+    border-bottom: 1px solid $footer-border;
+    
+    @media (max-width: 768px) {
+      flex-direction: column;
+      gap: 15px;
+      text-align: center;
+    }
+    
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.9rem;
+      color: $footer-text-muted;
+      
+      @media (max-width: 768px) {
+        justify-content: center;
+      }
+      
+      i {
+        font-size: 1rem;
+        color: $footer-text;
+      }
+    }
+  }
+  
+  // Bottom Section
+  .footer-bottom {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 20px;
+    border-top: 1px solid $footer-border;
+    
+    @media (max-width: 768px) {
+      flex-direction: column;
+      gap: 15px;
+      text-align: center;
+    }
+    
+    p {
+      margin: 0;
+      font-size: 0.9rem;
+      opacity: 0.8;
+    }
+    
+    .footer-legal {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      font-size: 0.9rem;
+      
+      a {
+        color: $footer-text-muted;
+        text-decoration: none;
+        transition: color 0.3s ease;
+        
+        &:hover {
+          color: $footer-text;
+          text-decoration: underline;
+        }
+      }
+      
+      .separator {
+        color: $footer-text-muted;
+      }
+    }
+  }
+}
+
+// Alternative: Compact Footer Style (uncomment if preferred)
+/*
+.footer-compact {
+  .footer-content {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+  
+  .footer-nav {
+    order: -1;
+  }
+  
+  .footer-brand {
+    order: 0;
+  }
+  
+  .footer-social {
+    order: 1;
+  }
+}
+*/
+
+// Dark mode support (optional)
+@media (prefers-color-scheme: dark) {
+  .footer {
+    // Already dark, but you can add adjustments if needed
+  }
+}

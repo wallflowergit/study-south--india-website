@@ -1,0 +1,138 @@
+<!-- src/app/pages/home/home.html -->
+<div class="home-container">
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-content">
+      <div class="hero-text">
+        <h1 class="hero-title">
+          Confused About Colleges Or Courses?<br>
+          We've Got You.
+        </h1>
+        <p class="hero-description">
+          Choosing A College Can Be Confusing. Our Counselors Simplify
+          The Process By Guiding You Through Courses, Colleges,
+          Eligibility, And Next Steps — At No Cost.
+        </p>
+        <button pButton label="Free Consultation" class="hero-button" (click)="navigateToContact()"></button>
+      </div>
+      <div class="hero-image">
+        <img src="assets\Banner\home-page-hero-section.png" alt="Student with tablet">
+      </div>
+    </div>
+  </section>
+
+  <!-- Popular Courses Section -->
+  <section class="popular-section">
+    <h2 class="section-title">Popular <span class="highlight">Courses</span></h2>
+    
+    <div class="cards-grid">
+      <div class="course-card" *ngFor="let course of popularCourses">
+        <div class="card-image">
+          <img 
+            [src]="getCourseImage(course)" 
+            [alt]="course.name"
+            (error)="onImageError($event, 'course')"
+          >
+        </div>
+        <div class="card-content">
+          <h3 class="card-title">{{ course.name }}</h3>
+          <p class="card-description">{{ course.description || 'Explore this course to learn more about career opportunities and requirements.' }}</p>
+          <button pButton label="View Details" class="card-button"></button>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-footer">
+      <button pButton label="View More Courses" class="view-more-button" routerLink="/courses"></button>
+    </div>
+  </section>
+
+  <!-- Popular Colleges Section -->
+  <section class="popular-section colleges-section">
+    <h2 class="section-title">Popular <span class="highlight">Colleges</span></h2>
+    
+    <div class="cards-grid">
+      <div class="course-card" *ngFor="let college of popularColleges">
+        <div class="card-image">
+          <img 
+            [src]="getCollegeImage(college)" 
+            [alt]="college.name"
+            (error)="onImageError($event, 'institution')"
+          >
+        </div>
+        <div class="card-content">
+          <h3 class="card-title">{{ college.name }}</h3>
+          <p class="card-description">{{ college.location }}, {{ college.state }}</p>
+          <button pButton label="View Details" class="card-button"></button>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-footer">
+      <button pButton label="View More Colleges" class="view-more-button" routerLink="/institutions"></button>
+    </div>
+  </section>
+
+  <!-- Clarity Section -->
+  <section class="clarity-section">
+    <div class="clarity-content">
+      <div class="clarity-image">
+        <img src="https://plus.unsplash.com/premium_photo-1682974403683-591557aa631b?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTI5fHxjb2xsZWdlfGVufDB8MHwwfHx8MA%3D%3D" alt="Study environment">
+      </div>
+      <div class="clarity-text">
+        <h2 class="clarity-title">
+          Clarity For Your Education<br>
+          Journey
+        </h2>
+        <p class="clarity-description">
+          Choosing The Right College And Course Can Be Confusing, And
+          We're Here To Simplify The Process. We Provide Honest, Free
+          Guidance Based On Each Student's Interests, Background, And
+          Goals. With Access To Information On Top Institutions And To
+          A Wide Range Of Colleges And Courses, We Help Students Explore
+          Options And Make Confident, Informed Decisions.
+        </p>
+        <button pButton label="Learn More" class="clarity-button" routerLink="/about"></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="testimonials-section">
+    <h2 class="section-title testimonials-title">Trusted By Students And Families</h2>
+    <p class="testimonials-subtitle">Feedback From Students and Parents We've Guided</p>
+    
+    <div class="testimonials-grid">
+      <div class="testimonial-card" *ngFor="let testimonial of testimonials">
+        <div class="testimonial-avatar">
+          <img 
+            [src]="getTestimonialImage(testimonial)" 
+            [alt]="testimonial.name"
+            (error)="onImageError($event, 'testimonial')"
+          >
+        </div>
+        <div class="testimonial-content">
+          <h4 class="testimonial-name">{{ testimonial.name }}</h4>
+          <p class="testimonial-role">{{ testimonial.role }}</p>
+          <p class="testimonial-feedback">{{ testimonial.feedback }}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="cta-content">
+      <p class="cta-subtitle">CLARITY FOR YOUR EDUCATION JOURNEY</p>
+      <h2 class="cta-title">Request More Information</h2>
+      <p class="cta-description">
+        We are an education consultancy dedicated to helping students choose the
+        right colleges and courses through honest, free guidance.
+      </p>
+      <button pButton label="Contact Us" class="cta-button"></button>
+    </div>
+  </section>
+
+  <!-- Footer Component -->
+  <app-footer></app-footer>
+</div>

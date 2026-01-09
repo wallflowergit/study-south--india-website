@@ -1,0 +1,228 @@
+<!-- Hero Section -->
+<section class="about-hero">
+  <div class="container">
+    <div class="hero-content">
+      <h1>About Study South India</h1>
+      <p class="hero-subtitle">Empowering Students to Make the Right Educational Choices</p>
+      <p class="hero-description">
+        For over a decade, we've been helping students across South India find their perfect college and course match. 
+        With expert guidance, transparent advice, and personalized support, we've successfully guided thousands of 
+        students toward their dream careers.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Stats Section -->
+<section class="stats-section">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-card" *ngFor="let stat of stats">
+        <div class="stat-value">{{ stat.value }}</div>
+        <div class="stat-label">{{ stat.label }}</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Mission & Vision -->
+<section class="mission-vision">
+  <div class="container">
+    <div class="content-grid">
+      <div class="mission-card">
+        <div class="card-icon">🎯</div>
+        <h2>Our Mission</h2>
+        <p>
+          To simplify the college admission process and empower every student to make informed decisions 
+          about their educational future. We strive to bridge the gap between students' aspirations and 
+          the right educational opportunities through personalized, unbiased counseling.
+        </p>
+      </div>
+      <div class="vision-card">
+        <div class="card-icon">🌟</div>
+        <h2>Our Vision</h2>
+        <p>
+          To become South India's most trusted education consultancy, where every student finds not just 
+          a college, but the perfect launchpad for their career. We envision a future where no student 
+          makes uninformed decisions about their education.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- How We Help -->
+<section class="how-we-help">
+  <div class="container">
+    <h2 class="section-title">How We Help Students</h2>
+    <p class="section-subtitle">Our comprehensive approach ensures you make the best choice for your future</p>
+    
+    <div class="help-grid">
+      <div class="help-card">
+        <div class="help-number">01</div>
+        <h3>Personalized Career Counseling</h3>
+        <p>
+          We begin by understanding your interests, strengths, and career goals. Our counselors use proven 
+          assessment methods to identify the best courses and career paths suited to your unique profile.
+        </p>
+      </div>
+      
+      <div class="help-card">
+        <div class="help-number">02</div>
+        <h3>College & Course Matching</h3>
+        <p>
+          Based on your preferences, budget, and academic background, we curate a personalized list of 
+          colleges and courses that align with your goals. We provide detailed comparisons to help you decide.
+        </p>
+      </div>
+      
+      <div class="help-card">
+        <div class="help-number">03</div>
+        <h3>Admission Guidance</h3>
+        <p>
+          From application submission to entrance exam preparation and interview coaching, we guide you 
+          through every step of the admission process with expert support and timely reminders.
+        </p>
+      </div>
+      
+      <div class="help-card">
+        <div class="help-number">04</div>
+        <h3>Scholarship & Financial Aid</h3>
+        <p>
+          We help you identify scholarship opportunities, education loans, and financial aid options to 
+          make quality education accessible and affordable for you and your family.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Our Values -->
+<section class="values-section">
+  <div class="container">
+    <h2 class="section-title">Our Core Values</h2>
+    <p class="section-subtitle">The principles that guide everything we do</p>
+    
+    <div class="values-grid">
+      <div class="value-card" *ngFor="let value of values">
+        <div class="value-icon">{{ value.icon }}</div>
+        <h3>{{ value.title }}</h3>
+        <p>{{ value.description }}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Meet Our Team -->
+<section class="team-section">
+  <div class="container">
+    <h2 class="section-title">Meet Our Expert Counselors</h2>
+    <p class="section-subtitle">Experienced professionals dedicated to your success</p>
+    
+    <div class="team-grid">
+      <div class="team-card" *ngFor="let member of team">
+        <div class="team-image">
+          <img [src]="member.image" [alt]="member.name" />
+        </div>
+        <div class="team-info">
+          <h3>{{ member.name }}</h3>
+          <p class="team-role">{{ member.role }}</p>
+          <p class="team-experience">{{ member.experience }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Our Journey -->
+<section class="journey-section">
+  <div class="container">
+    <h2 class="section-title">Our Journey</h2>
+    <p class="section-subtitle">Growing together with our students</p>
+    
+    <div class="timeline">
+      <div class="timeline-item" *ngFor="let milestone of milestones; let i = index" 
+           [class.timeline-left]="i % 2 === 0" 
+           [class.timeline-right]="i % 2 !== 0">
+        <div class="timeline-content">
+          <div class="timeline-year">{{ milestone.year }}</div>
+          <div class="timeline-event">{{ milestone.event }}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials -->
+<section class="testimonials-section">
+  <div class="container">
+    <h2 class="section-title">Success Stories</h2>
+    <p class="section-subtitle">Hear from students who trusted us with their future</p>
+    
+    <div class="testimonials-grid">
+      <div class="testimonial-card" *ngFor="let testimonial of testimonials">
+        <div class="testimonial-content">
+          <div class="quote-icon">"</div>
+          <p class="testimonial-text">{{ testimonial.text }}</p>
+        </div>
+        <div class="testimonial-author">
+          <div class="author-image">
+            <img [src]="testimonial.image" [alt]="testimonial.name" />
+          </div>
+          <div class="author-info">
+            <h4>{{ testimonial.name }}</h4>
+            <p class="author-course">{{ testimonial.course }}</p>
+            <p class="author-college">{{ testimonial.college }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Partnerships -->
+<section class="partnerships-section">
+  <div class="container">
+    <h2 class="section-title">Our Partnerships</h2>
+    <p class="section-subtitle">
+      We've built strong relationships with over 200 colleges and universities across South India, 
+      ensuring you get accurate information and priority support during admissions.
+    </p>
+    <div class="partnership-features">
+      <div class="feature">
+        <span class="feature-icon">✓</span>
+        <span>Verified college information</span>
+      </div>
+      <div class="feature">
+        <span class="feature-icon">✓</span>
+        <span>Direct admission support</span>
+      </div>
+      <div class="feature">
+        <span class="feature-icon">✓</span>
+        <span>Priority application processing</span>
+      </div>
+      <div class="feature">
+        <span class="feature-icon">✓</span>
+        <span>Exclusive scholarship opportunities</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA Section -->
+<section class="cta-section">
+  <div class="container">
+    <div class="cta-content">
+      <h2>Ready to Start Your Educational Journey?</h2>
+      <p>
+        Let our expert counselors help you find the perfect college and course for your future. 
+        Get personalized guidance completely free!
+      </p>
+      <button class="cta-button" (click)="scrollToConsultation()">
+        Get Free Consultation
+      </button>
+    </div>
+  </div>
+</section>
+
+  <app-footer></app-footer>
