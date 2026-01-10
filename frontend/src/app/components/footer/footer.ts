@@ -53,7 +53,7 @@ export class Footer {
   contactInfo = {
     phone: '+91 XXXXX XXXXX',
     email: 'info@studysouthindia.com',
-    address: 'Bangalore, Karnataka, India'
+    // address: 'Bangalore, Karnataka, India'
   };
 
   constructor() {}
