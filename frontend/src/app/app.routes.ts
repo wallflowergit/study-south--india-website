@@ -10,6 +10,8 @@ import { About } from './components/about/about';
 import { ContactUs } from './components/contact-us/contact-us';
 import { CourseDetails } from './components/course-list/course-details/course-details';
 import { InstitutionDetails } from './components/institution-list/institution-details/institution-details';
+import { PrivacyPolicy } from './components/privacy-policy/privacy-policy';
+import { Terms } from './components/terms/terms';
 
 export const routes: Routes = [
   { path: '', component: Home },
@@ -24,6 +26,8 @@ export const routes: Routes = [
   { path: 'courses/add', component: CourseForm },
   { path: 'courses/edit/:id', component: CourseForm },
    { path: 'courses/:id', component: CourseDetails },
+  { path: 'privacy-policy',component: PrivacyPolicy},
+  { path: 'terms',component: Terms},
   { path: '**', redirectTo: '' }
 ];
 
