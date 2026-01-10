@@ -43,7 +43,9 @@
 
     <!-- Course Cards -->
     <div *ngIf="!loading && paginatedCourses.length > 0" class="cards-grid">
-      <div class="course-card" *ngFor="let course of paginatedCourses">
+      <div class="course-card" 
+           *ngFor="let course of paginatedCourses"
+           [routerLink]="['/courses', course.id]">
         <div class="card-image-wrapper">
           <img 
             [src]="getCourseImage(course)" 
@@ -64,6 +66,7 @@
             </div>
             <div class="info-item">
               <i class="pi pi-clock"></i>
+      
             </div>
           </div>
         </div>

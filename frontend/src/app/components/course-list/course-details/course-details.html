@@ -1,0 +1,90 @@
+<div class="course-details-page">
+  <!-- Loading Skeleton -->
+  <div *ngIf="loading" class="container">
+    <div class="detail-skeleton">
+      <p-skeleton width="120px" height="2.5rem" styleClass="mb-4"></p-skeleton>
+      <p-skeleton height="400px" styleClass="mb-4"></p-skeleton>
+      <p-skeleton width="70%" height="2.5rem" styleClass="mb-3"></p-skeleton>
+      <p-skeleton width="50%" height="1.5rem" styleClass="mb-3"></p-skeleton>
+      <p-skeleton width="100%" height="8rem" styleClass="mb-3"></p-skeleton>
+      <div class="info-grid">
+        <p-skeleton width="100%" height="6rem"></p-skeleton>
+        <p-skeleton width="100%" height="6rem"></p-skeleton>
+      </div>
+    </div>
+  </div>
+
+  <!-- Error State -->
+  <div *ngIf="!loading && error" class="container">
+    <div class="error-state">
+      <i class="pi pi-exclamation-circle error-icon"></i>
+      <h2 class="error-title">{{ error }}</h2>
+      <p-button 
+        label="Go Back to Courses" 
+        icon="pi pi-arrow-left" 
+        (onClick)="goBack()"
+        styleClass="p-button-outlined">
+      </p-button>
+    </div>
+  </div>
+
+  <!-- Course Details -->
+  <div *ngIf="!loading && course" class="container">
+    <div class="details-content">
+      <!-- Back Button -->
+      <div class="back-button-wrapper">
+        <p-button 
+          label="Back to Courses" 
+          icon="pi pi-arrow-left" 
+          (onClick)="goBack()"
+          styleClass="p-button-text p-button-plain back-btn">
+        </p-button>
+      </div>
+
+      <!-- Course Hero -->
+      <div class="course-hero">
+        <div class="hero-image-wrapper">
+          <img 
+            [src]="getCourseImage()" 
+            [alt]="course.name"
+            class="hero-image"
+            (error)="$any($event.target).src='assets/images/course-placeholder.png'">
+        </div>
+        <div class="hero-info">
+          <h1 class="course-name">{{ course.name }}</h1>
+          <div class="course-meta">
+            <div class="meta-item">
+              <i class="pi pi-book"></i>
+              <span>{{ course.stream }}</span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- Course Description -->
+      <div class="detail-section" *ngIf="course.description">
+        <h2 class="section-title">About This Course</h2>
+        <p class="section-content">{{ course.description }}</p>
+      </div>
+
+    
+
+      <!-- Action Buttons -->
+      <div class="action-buttons">
+        <p-button 
+          label="Apply Now" 
+          icon="pi pi-check"
+          styleClass="apply-btn">
+        </p-button>
+        <p-button 
+          label="Download Brochure" 
+          icon="pi pi-download"
+          styleClass="p-button-outlined download-btn">
+        </p-button>
+      </div>
+    </div>
+  </div>
+
+
+</div>

@@ -6,7 +6,7 @@
       <p class="hero-subtitle">Discover 123+ premier educational institutions across Karnataka, Tamil Nadu, Kerala, and Andhra Pradesh. Find the perfect match for your academic journey.</p>
     </div>
 
-        <!-- Search Section -->
+    <!-- Search Section -->
     <div class="search-section">
       <div class="search-wrapper">
         <div class="search-box">
@@ -24,44 +24,45 @@
         </div>
       </div>
     </div>
+
     <!-- Filter Section -->
-<div class="filter-section">
-  <div class="filter-wrapper">
-    <span class="filter-label">Filter by State:</span>
-    <div class="filter-buttons">
-      <p-button 
-        label="All States" 
-        [outlined]="selectedState !== ''"
-        (onClick)="filterByState('')"
-        styleClass="filter-btn">
-      </p-button>
-      <p-button 
-        label="Karnataka" 
-        [outlined]="selectedState !== 'Karnataka'"
-        (onClick)="filterByState('Karnataka')"
-        styleClass="filter-btn">
-      </p-button>
-      <p-button 
-        label="Tamil Nadu" 
-        [outlined]="selectedState !== 'Tamil Nadu'"
-        (onClick)="filterByState('Tamil Nadu')"
-        styleClass="filter-btn">
-      </p-button>
-      <p-button 
-        label="Kerala" 
-        [outlined]="selectedState !== 'Kerala'"
-        (onClick)="filterByState('Kerala')"
-        styleClass="filter-btn">
-      </p-button>
-      <p-button 
-        label="Andhra Pradesh" 
-        [outlined]="selectedState !== 'Andhra Pradesh'"
-        (onClick)="filterByState('Andhra Pradesh')"
-        styleClass="filter-btn">
-      </p-button>
+    <div class="filter-section">
+      <div class="filter-wrapper">
+        <span class="filter-label">Filter by State:</span>
+        <div class="filter-buttons">
+          <p-button 
+            label="All States" 
+            [outlined]="selectedState !== ''"
+            (onClick)="filterByState('')"
+            styleClass="filter-btn">
+          </p-button>
+          <p-button 
+            label="Karnataka" 
+            [outlined]="selectedState !== 'Karnataka'"
+            (onClick)="filterByState('Karnataka')"
+            styleClass="filter-btn">
+          </p-button>
+          <p-button 
+            label="Tamil Nadu" 
+            [outlined]="selectedState !== 'Tamil Nadu'"
+            (onClick)="filterByState('Tamil Nadu')"
+            styleClass="filter-btn">
+          </p-button>
+          <p-button 
+            label="Kerala" 
+            [outlined]="selectedState !== 'Kerala'"
+            (onClick)="filterByState('Kerala')"
+            styleClass="filter-btn">
+          </p-button>
+          <p-button 
+            label="Andhra Pradesh" 
+            [outlined]="selectedState !== 'Andhra Pradesh'"
+            (onClick)="filterByState('Andhra Pradesh')"
+            styleClass="filter-btn">
+          </p-button>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
   </div>
 
   <!-- Main Container -->
@@ -80,7 +81,9 @@
 
     <!-- Institution Cards -->
     <div *ngIf="!isLoading && paginatedInstitutions.length > 0" class="cards-grid">
-      <div class="institution-card" *ngFor="let institution of paginatedInstitutions">
+      <div class="institution-card" 
+           *ngFor="let institution of paginatedInstitutions"
+           [routerLink]="['/institutions', institution.id]">
         <div class="card-image-wrapper">
           <img 
             [src]="getInstitutionImage(institution)" 
@@ -152,5 +155,5 @@
       </p-button>
     </div>
   </div>
-    <app-footer></app-footer>
+  <app-footer></app-footer>
 </div>

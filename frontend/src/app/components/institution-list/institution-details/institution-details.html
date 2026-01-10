@@ -1,0 +1,102 @@
+<div class="institution-details-page">
+  <!-- Loading Skeleton -->
+  <div *ngIf="loading" class="container">
+    <div class="detail-skeleton">
+      <p-skeleton width="150px" height="2.5rem" styleClass="mb-4"></p-skeleton>
+      <p-skeleton height="400px" styleClass="mb-4"></p-skeleton>
+      <p-skeleton width="70%" height="2.5rem" styleClass="mb-3"></p-skeleton>
+      <p-skeleton width="50%" height="1.5rem" styleClass="mb-3"></p-skeleton>
+      <div class="info-grid">
+        <p-skeleton width="100%" height="6rem"></p-skeleton>
+        <p-skeleton width="100%" height="6rem"></p-skeleton>
+      </div>
+    </div>
+  </div>
+
+  <!-- Error State -->
+  <div *ngIf="!loading && error" class="container">
+    <div class="error-state">
+      <i class="pi pi-exclamation-circle error-icon"></i>
+      <h2 class="error-title">{{ error }}</h2>
+      <p-button 
+        label="Go Back to Institutions" 
+        icon="pi pi-arrow-left" 
+        (onClick)="goBack()"
+        styleClass="p-button-outlined">
+      </p-button>
+    </div>
+  </div>
+
+  <!-- Institution Details -->
+  <div *ngIf="!loading && institution" class="container">
+    <div class="details-content">
+      <!-- Back Button -->
+      <div class="back-button-wrapper">
+        <p-button 
+          label="Back to Institutions" 
+          icon="pi pi-arrow-left" 
+          (onClick)="goBack()"
+          styleClass="p-button-text p-button-plain back-btn">
+        </p-button>
+      </div>
+
+      <!-- Institution Hero -->
+      <div class="institution-hero">
+        <div class="hero-image-wrapper">
+          <img 
+            [src]="getInstitutionImage()" 
+            [alt]="institution.name"
+            class="hero-image"
+            (error)="$any($event.target).src='assets/images/institution-placeholder.png'">
+        </div>
+        <div class="hero-info">
+          <h1 class="institution-name">{{ institution.name }}</h1>
+          <div class="institution-meta">
+            <div class="meta-item">
+              <i class="pi pi-map-marker"></i>
+              <span>{{ institution.location }}</span>
+            </div>
+            <div class="meta-item">
+              <i class="pi pi-globe"></i>
+              <span>{{ institution.state }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Institution Information Grid -->
+      <div class="info-grid">
+        <div class="info-card">
+          <div class="info-card-header">
+            <i class="pi pi-map-marker"></i>
+            <h3>Location</h3>
+          </div>
+          <p class="info-card-content">{{ institution.location }}, {{ institution.state }}</p>
+        </div>
+
+        <div class="info-card">
+          <div class="info-card-header">
+            <i class="pi pi-building"></i>
+            <h3>Institution Type</h3>
+          </div>
+          <p class="info-card-content">Educational Institution</p>
+        </div>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="action-buttons">
+        <p-button 
+          label="Contact Institution" 
+          icon="pi pi-phone"
+          styleClass="contact-btn">
+        </p-button>
+        <p-button 
+          label="View Courses" 
+          icon="pi pi-book"
+          styleClass="p-button-outlined courses-btn">
+        </p-button>
+      </div>
+    </div>
+  </div>
+
+</div>

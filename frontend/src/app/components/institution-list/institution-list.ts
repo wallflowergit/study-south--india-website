@@ -9,6 +9,7 @@ import { ButtonModule } from 'primeng/button';
 import { InputTextModule } from 'primeng/inputtext';
 import { SkeletonModule } from 'primeng/skeleton';
 import { Footer } from "../footer/footer";
+import { RouterLink } from '@angular/router';
 
 interface PaginatedResponse {
   count: number;
@@ -26,7 +27,8 @@ interface PaginatedResponse {
     ButtonModule,
     InputTextModule,
     SkeletonModule,
-    Footer
+    Footer,
+    RouterLink
 ],
   templateUrl: './institution-list.html',
   styleUrls: ['./institution-list.scss']

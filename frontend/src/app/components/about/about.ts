@@ -12,7 +12,7 @@ export class About {
     { value: '5000+', label: 'Students Guided' },
     { value: '200+', label: 'Partner Colleges' },
     { value: '50+', label: 'Courses Covered' },
-    { value: '95%', label: 'Success Rate' }
+    { value: '96%', label: 'Success Rate' }
   ];
 
   values = [

@@ -1,0 +1,234 @@
+.institution-details-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+
+  // Loading Skeleton
+  .detail-skeleton {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+  }
+
+  // Error State
+  .error-state {
+    text-align: center;
+    padding: 4rem 2rem;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+    .error-icon {
+      font-size: 4rem;
+      color: #ef4444;
+      margin-bottom: 1.5rem;
+    }
+
+    .error-title {
+      font-size: 1.5rem;
+      color: #1f2937;
+      margin-bottom: 2rem;
+    }
+  }
+
+  // Details Content
+  .details-content {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+  }
+
+  // Back Button
+  .back-button-wrapper {
+    padding: 1.5rem 2rem;
+    border-bottom: 1px solid #e5e7eb;
+
+    .back-btn {
+      color: #6366f1;
+      font-weight: 500;
+
+      &:hover {
+        background: #eef2ff;
+      }
+    }
+  }
+
+  // Institution Hero
+  .institution-hero {
+    position: relative;
+    
+    .hero-image-wrapper {
+      width: 100%;
+      height: 400px;
+      overflow: hidden;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+
+      .hero-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+      }
+    }
+
+    .hero-info {
+      padding: 2rem;
+      background: white;
+
+      .institution-name {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: #1f2937;
+        margin-bottom: 1rem;
+        line-height: 1.2;
+      }
+
+      .institution-meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+
+        .meta-item {
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+          color: #6b7280;
+          font-size: 1rem;
+
+          i {
+            color: #6366f1;
+          }
+        }
+      }
+    }
+  }
+
+  // Info Grid
+  .info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    padding: 2rem;
+    background: #f9fafb;
+
+    .info-card {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+      transition: all 0.3s ease;
+
+      &:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+      }
+
+      .info-card-header {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        margin-bottom: 1rem;
+
+        i {
+          font-size: 1.5rem;
+          color: #6366f1;
+        }
+
+        h3 {
+          font-size: 1.125rem;
+          font-weight: 600;
+          color: #1f2937;
+        }
+      }
+
+      .info-card-content {
+        font-size: 0.95rem;
+        line-height: 1.6;
+        color: #4b5563;
+      }
+    }
+  }
+
+  // Action Buttons
+  .action-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 2rem;
+    justify-content: center;
+
+    .contact-btn {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      border: none;
+      font-weight: 600;
+      padding: 0.75rem 2rem;
+
+      &:hover {
+        background: linear-gradient(135deg, #5568d3 0%, #63408a 100%);
+      }
+    }
+
+    .courses-btn {
+      border-color: #6366f1;
+      color: #6366f1;
+      font-weight: 600;
+      padding: 0.75rem 2rem;
+
+      &:hover {
+        background: #eef2ff;
+      }
+    }
+  }
+
+  // Responsive Design
+  @media (max-width: 768px) {
+    .container {
+      padding: 1rem;
+    }
+
+    .institution-hero {
+      .hero-image-wrapper {
+        height: 250px;
+      }
+
+      .hero-info {
+        padding: 1.5rem;
+
+        .institution-name {
+          font-size: 1.75rem;
+        }
+      }
+    }
+
+    .info-grid,
+    .action-buttons {
+      padding: 1.5rem;
+    }
+
+    .info-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .action-buttons {
+      flex-direction: column;
+
+      button {
+        width: 100%;
+      }
+    }
+  }
+}
