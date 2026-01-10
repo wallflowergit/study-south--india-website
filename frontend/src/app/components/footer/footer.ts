@@ -39,7 +39,7 @@ export class Footer {
     },
     {
       icon: 'pi pi-instagram',
-      url: 'https://instagram.com/studysouthindia',
+      url: 'https://www.instagram.com/study_south_india?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==',
       label: 'Instagram'
     },
     {
