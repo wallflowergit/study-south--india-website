@@ -42,6 +42,7 @@
   display: flex;
   flex-direction: column;
   gap: 2px;
+  cursor: pointer;
 }
 
 /* Main brand name */
@@ -71,17 +72,20 @@
 }
 
 ::ng-deep .header-center .p-tab {
-  background: transparent;
-  border: none;
-  border-bottom: 3px solid transparent; /* Always have a bottom border */
-  border-radius: 8px 8px 0 0;
-  padding: 0rem 1.5rem;
-  color: #475569;
-  font-weight: 500;
-  font-size: 0.95rem;
-  transition: background 0.2s ease, color 0.2s ease; /* Removed border-bottom-color transition */
-  cursor: pointer;
-  will-change: background, color; /* Performance optimization */
+background: transparent;
+    display: flex;
+    border: none;
+    border-bottom: 3px solid transparent;
+    border-radius: 8px 8px 0 0;
+    padding: 0rem 1.5rem;
+    color: #475569;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: background 0.2s ease, color 0.2s ease;
+    cursor: pointer;
+    will-change: background, color;
+    gap: 6px;
+    align-items: center;
 }
 
 /* Keep the height and padding consistent */

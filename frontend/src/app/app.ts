@@ -11,7 +11,7 @@ import { Footer } from "./components/footer/footer";
   selector: 'app-root',
   imports: [RouterOutlet,
     ToastModule,
-    ConfirmDialog, Header, Footer],
+    ConfirmDialog, Header],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })

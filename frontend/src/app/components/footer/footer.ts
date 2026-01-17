@@ -33,7 +33,7 @@ export class Footer {
 
   socialLinks: SocialLink[] = [
     {
-      icon: 'pi pi-linkedin',
+      icon: 'pi pi-facebook',
       url: 'https://linkedin.com/company/study-south-india',
       label: 'LinkedIn'
     },
