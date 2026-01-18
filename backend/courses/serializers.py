@@ -9,8 +9,10 @@ class CourseSerializer(serializers.ModelSerializer):
         fields = ['id', 'stream', 'level', 'name', 'description', 'image', 'image_url', 'created_at', 'updated_at']
     
 def get_image_url(self, obj):
-    if obj.image:
-        return obj.image
-    return None
+    try:
+        return obj.get_image_url()
+    except Exception:
+        return ""
+
 
 

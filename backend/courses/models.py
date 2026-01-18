@@ -34,9 +34,12 @@ class Course(models.Model):
     def __str__(self):
         return self.name
     
-    def get_image_url(self):
-        """Returns the image URL or generates one based on name if not set"""
-        if self.image:
-            return self.image
-        slug = self.name.lower().replace('.', '').replace(' ', '-')
-        return f"assets/images/courses/{slug}.png"
+def get_image_url(self):
+    if self.image:
+        return self.image
+
+    if not self.name:
+        return ""
+
+    slug = self.name.lower().replace('.', '').replace(' ', '-')
+    return f"/assets/images/courses/{slug}.png"
