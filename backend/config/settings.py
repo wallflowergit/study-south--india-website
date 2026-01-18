@@ -99,15 +99,17 @@ TEMPLATES = [
 
 
 # =========================
-# DATABASE (AUTO SWITCH)
+# DATABASE (RENDER SAFE)
 # =========================
 
 DATABASES = {
-    'default': dj_database_url.config(
-        default='mysql://root:@localhost:3306/education_portal_db',
+    "default": dj_database_url.config(
+        default=os.getenv("DATABASE_URL"),
         conn_max_age=600,
+        ssl_require=True,
     )
 }
+
 
 
 # =========================
