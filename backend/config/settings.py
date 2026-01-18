@@ -2,6 +2,7 @@ import os
 from pathlib import Path
 from datetime import timedelta
 from dotenv import load_dotenv
+import dj_database_url
 
 load_dotenv()
 
@@ -33,7 +34,6 @@ ALLOWED_HOSTS = [
 # =========================
 
 INSTALLED_APPS = [
-    # Django core
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -41,12 +41,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    # Third-party
     'rest_framework',
     'corsheaders',
     'whitenoise.runserver_nostatic',
 
-    # Local apps
     'institutions',
     'courses',
     'authentication',
@@ -54,7 +52,7 @@ INSTALLED_APPS = [
 
 
 # =========================
-# MIDDLEWARE (ORDER MATTERS)
+# MIDDLEWARE
 # =========================
 
 MIDDLEWARE = [
@@ -76,7 +74,6 @@ MIDDLEWARE = [
 # =========================
 
 ROOT_URLCONF = 'config.urls'
-
 WSGI_APPLICATION = 'config.wsgi.application'
 
 
@@ -102,40 +99,15 @@ TEMPLATES = [
 
 
 # =========================
-# DATABASE (MySQL local / Postgres on Render)
+# DATABASE (AUTO SWITCH)
 # =========================
 
-DB_ENGINE = os.getenv("DB_ENGINE", "mysql")
-
-if DB_ENGINE == "postgres":
-    DATABASES = {
-        "default": {
-            "ENGINE": "django.db.backends.postgresql",
-            "NAME": os.getenv("DB_NAME"),
-            "USER": os.getenv("DB_USER"),
-            "PASSWORD": os.getenv("DB_PASSWORD"),
-            "HOST": os.getenv("DB_HOST"),
-            "PORT": os.getenv("DB_PORT"),
-        }
-    }
-else:
-    import pymysql
-    pymysql.install_as_MySQLdb()
-
-    DATABASES = {
-        "default": {
-            "ENGINE": "django.db.backends.mysql",
-            "NAME": os.getenv("DB_NAME", "education_portal_db"),
-            "USER": os.getenv("DB_USER", "root"),
-            "PASSWORD": os.getenv("DB_PASSWORD", ""),
-            "HOST": os.getenv("DB_HOST", "localhost"),
-            "PORT": os.getenv("DB_PORT", "3306"),
-            "OPTIONS": {
-                "init_command": "SET sql_mode='STRICT_TRANS_TABLES'",
-                "charset": "utf8mb4",
-            },
-        }
-    }
+DATABASES = {
+    'default': dj_database_url.config(
+        default='mysql://root:@localhost:3306/education_portal_db',
+        conn_max_age=600,
+    )
+}
 
 
 # =========================
@@ -161,7 +133,7 @@ USE_TZ = True
 
 
 # =========================
-# STATIC FILES (RENDER)
+# STATIC FILES
 # =========================
 
 STATIC_URL = '/static/'
@@ -173,20 +145,19 @@ STATICFILES_STORAGE = (
 
 
 # =========================
-# DEFAULT PRIMARY KEY
+# DEFAULT PK
 # =========================
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 # =========================
-# CORS (VERCEL + LOCAL)
+# CORS
 # =========================
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:4200",
     "http://127.0.0.1:4200",
-
     "https://studysouthindia.in",
     "https://www.studysouthindia.in",
 ]
