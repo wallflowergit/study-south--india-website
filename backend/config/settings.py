@@ -2,38 +2,66 @@ import os
 from pathlib import Path
 from datetime import timedelta
 from dotenv import load_dotenv
-load_dotenv()
 
+load_dotenv()
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = 'django-insecure-your-secret-key-change-in-production'
 
-DEBUG = True
+# =========================
+# CORE SETTINGS
+# =========================
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1']
+SECRET_KEY = os.getenv(
+    "SECRET_KEY",
+    "django-insecure-change-this-in-production"
+)
+
+DEBUG = os.getenv("DEBUG", "False") == "True"
+
+ALLOWED_HOSTS = [
+    "localhost",
+    "127.0.0.1",
+    "studysouthindia.in",
+    "www.studysouthindia.in",
+    ".onrender.com",
+]
+
+
+# =========================
+# APPLICATIONS
+# =========================
 
 INSTALLED_APPS = [
+    # Django core
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    
-    # Third party
+
+    # Third-party
     'rest_framework',
     'corsheaders',
-    
+    'whitenoise.runserver_nostatic',
+
     # Local apps
     'institutions',
     'courses',
     'authentication',
 ]
 
+
+# =========================
+# MIDDLEWARE (ORDER MATTERS)
+# =========================
+
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
+
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -42,7 +70,19 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+
+# =========================
+# URL / WSGI
+# =========================
+
 ROOT_URLCONF = 'config.urls'
+
+WSGI_APPLICATION = 'config.wsgi.application'
+
+
+# =========================
+# TEMPLATES
+# =========================
 
 TEMPLATES = [
     {
@@ -60,9 +100,11 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'config.wsgi.application'
 
-# PyMySQL Database Configuration
+# =========================
+# DATABASE (MySQL - TEMP)
+# =========================
+
 import pymysql
 pymysql.install_as_MySQLdb()
 
@@ -82,6 +124,10 @@ DATABASES = {
 }
 
 
+# =========================
+# PASSWORD VALIDATION
+# =========================
+
 AUTH_PASSWORD_VALIDATORS = [
     {'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator'},
     {'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator'},
@@ -89,36 +135,63 @@ AUTH_PASSWORD_VALIDATORS = [
     {'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator'},
 ]
 
+
+# =========================
+# INTERNATIONALIZATION
+# =========================
+
 LANGUAGE_CODE = 'en-us'
 TIME_ZONE = 'Asia/Kolkata'
 USE_I18N = True
 USE_TZ = True
 
-STATIC_URL = 'static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+# =========================
+# STATIC FILES (RENDER)
+# =========================
+
+STATIC_URL = '/static/'
+STATIC_ROOT = BASE_DIR / 'staticfiles'
+
+STATICFILES_STORAGE = (
+    'whitenoise.storage.CompressedManifestStaticFilesStorage'
+)
+
+
+# =========================
+# DEFAULT PRIMARY KEY
+# =========================
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# CORS Settings
+
+# =========================
+# CORS (VERCEL + LOCAL)
+# =========================
+
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:4200",
     "http://127.0.0.1:4200",
-    "http://localhost:3000",
-    "http://127.0.0.1:3000",
-    "http://localhost:5173",
-    "http://127.0.0.1:5173",
+
+    "https://studysouthindia.in",
+    "https://www.studysouthindia.in",
 ]
+
 CORS_ALLOW_CREDENTIALS = True
 
-# REST Framework Settings
+
+# =========================
+# DRF + JWT
+# =========================
+
 REST_FRAMEWORK = {
-    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+    'DEFAULT_PAGINATION_CLASS':
+        'rest_framework.pagination.PageNumberPagination',
     'DEFAULT_AUTHENTICATION_CLASSES': [
         'rest_framework_simplejwt.authentication.JWTAuthentication',
     ],
 }
 
-# JWT Settings
 SIMPLE_JWT = {
     'ACCESS_TOKEN_LIFETIME': timedelta(hours=24),
     'REFRESH_TOKEN_LIFETIME': timedelta(days=7),
