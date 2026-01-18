@@ -7,7 +7,7 @@ import { Institution } from '../models/institution.model';
   providedIn: 'root'
 })
 export class InstitutionService {
-  private apiUrl = 'https://studysouthindia-backend.onrender.com/api/institutions/';
+  private apiUrl = 'https://studysouthindia-backend.onrender.com/api/institutions';
 
   constructor(private http: HttpClient) { }
 
