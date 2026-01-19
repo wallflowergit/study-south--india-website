@@ -35,3 +35,4 @@ class Course(models.Model):
         return self.name
     
 
+temp_fix = models.BooleanField(default=True)
