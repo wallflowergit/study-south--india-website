@@ -2,16 +2,9 @@ from rest_framework import serializers
 from .models import Course
 
 class CourseSerializer(serializers.ModelSerializer):
-    image_url = serializers.SerializerMethodField()
     
     class Meta:
         model = Course
         fields = ['id', 'stream', 'level', 'name', 'description', 'image', 'image_url', 'created_at', 'updated_at']
     
-def get_image_url(self, obj):
-    if not obj.name:
-        return ""
-    return obj.get_image_url()
-
-
 
