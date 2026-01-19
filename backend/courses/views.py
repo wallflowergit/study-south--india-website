@@ -5,13 +5,22 @@ from .models import Course
 from .serializers import CourseSerializer
 
 class CourseViewSet(viewsets.ModelViewSet):
-    queryset = Course.objects.filter(
-        name__isnull=False,
-        stream__isnull=False,
-        level__isnull=False
+    serializer_class = CourseSerializer
+
+    queryset = Course.objects.exclude(
+        name__isnull=True
     ).exclude(
         name=""
+    ).exclude(
+        stream__isnull=True
+    ).exclude(
+        stream=""
+    ).exclude(
+        level__isnull=True
+    ).exclude(
+        level=""
     )
+
     serializer_class = CourseSerializer
     filter_backends = [filters.SearchFilter, filters.OrderingFilter]
     search_fields = ['name', 'description', 'stream']
